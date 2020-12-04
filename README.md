@@ -3,7 +3,7 @@
 ## About
 Our project will be a series of different simulations which put data into a database. Some of our ideas for simulations are:
 - [ ] Physics Pendulum
-- [ ] Death Game
+- [ ] Survival Game (akin to things like Kimi ga Shine or Danganronpa)
 
 ## Contributers
 | GitHub Username | Person |
