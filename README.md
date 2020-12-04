@@ -9,6 +9,6 @@ Our project will be a series of different simulations which put data into a data
 | GitHub Username | Person |
 | --- | --- |
 | [@VihanJ](https://github.com/VihanJ) | Vihan Jayaraman |
-| [@eyaadm](https://github.com/eyaadm) | Eyaad Mir |
+| [@EyaadM](https://github.com/eyaadm) | Eyaad Mir |
 | [@YasaswiS](https://github.com/YasaswiS) | Yasaswi Singamneni |
 | [@tonyhieu](https://github.com/tonyhieu) | Anthony Vo |
