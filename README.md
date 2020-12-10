@@ -34,5 +34,5 @@ In video games such as Danganronpa and Kimi ga Shine, the premise is that there 
 - Sociability
 - Empathy
 - Pre-existing Relationships w/ Other Contestants
-
+https://static.wikia.nocookie.net/kimi-ga-shine/images/2/22/Cara19-1.png/revision/latest/smart/width/200/height/200?cb=20190730223348
 Each of these attributes will be on a scale from 1-10 aside from the relationships which will be set to strangers by default. By calculating each of these traits, we can predict who will be eliminated and what effect that will have on the other contestants. At the end, only 1-2 people will be left, and the winners will be put into the database along with their traits.
