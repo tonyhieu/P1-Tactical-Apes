@@ -25,7 +25,7 @@ We will use databses in order to store data received from our simulations. For e
 ## Simulations
 
 ### Physics Pendulum
-To be added by Vihan and Yasaswi
+To be added by Vihan and Yasaswi.
 
 ### Survival Game
 In video games such as Danganronpa and Kimi ga Shine, the premise is that there is a game where multiple contestants who are forced to betray each other. The winner of said game will be the survivor(s). This simulation attempts to figure out who will win each game given a number of contestants with different attributes. Attributes are as follows:
