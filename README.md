@@ -1,5 +1,11 @@
 # P1-Tactical-Apes
 
+## Table of Contents
+- [About](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#about)
+- [Contributers](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#contributers)
+- [Database](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#database)
+- [Simulations](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#simulations)
+
 ## About
 Our project will be a series of different simulations which put data into a database. Some of our ideas for simulations are:
 - [ ] Physics Pendulum
