@@ -20,7 +20,7 @@ Our project will be a series of different simulations which put data into a data
 | [@tonyhieu](https://github.com/tonyhieu) | Anthony Vo |
 
 ## Database
-We will use databses in order to store data received from our simulations. For example, our physics simulations will store the velocity, acceleration, and position of an object at certain times. Our survival game simulation will store the winner of said games and their attributes.
+We will use databases in order to store data received from our simulations. For example, our physics simulations will store the velocity, acceleration, and position of an object at certain times. Our survival game simulation will store the winner of said games and their attributes.
 
 ## Simulations
 
