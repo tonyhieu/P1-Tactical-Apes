@@ -40,7 +40,7 @@ Each of these attributes will be on a scale from 1-10 aside from the relationshi
 
 ### Timeline 
 
-Fridays: Require 
+Fridays: 
 
-Midterm: Physics pendulum and survival game projects with functioning MVC and Source Code
-N@TM: Complete the physics pendulum and survival game projects with online web support
+-Midterm: Physics pendulum and survival game projects with functioning MVC and Source Code
+-N@TM: Complete the physics pendulum and survival game projects with online web support
