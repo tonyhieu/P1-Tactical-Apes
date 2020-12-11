@@ -25,7 +25,7 @@ We will use databses in order to store data received from our simulations. For e
 ## Simulations
 
 ### Physics Pendulum
-To be added by Vihan and Yasaswi.
+This simulation will simulate the chaotic double pendulum as seen [here](https://rotations.berkeley.edu/wp-content/uploads/2017/10/double-pendulum.png) and allow the user to edit things such as the mass of each pendulum, the length of the pendulum, and the starting position. We will store info about acceleration, velocity postion, forces, angles, and others at a regular interval in a database, so that they can be used for visualsations and analysis.
 
 ### Survival Game
 In video games such as Danganronpa and Kimi ga Shine, the premise is that there is a game where multiple contestants who are forced to betray each other. The winner of said game will be the survivor(s). This simulation attempts to figure out who will win each game given a number of contestants with different attributes. Attributes are as follows:
