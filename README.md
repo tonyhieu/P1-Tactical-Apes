@@ -30,7 +30,9 @@ This simulation will simulate the chaotic double pendulum as seen [here](https:/
 
 ### Survival Game
 
-<img align="center" src="souHiyori.png">
+<p align="center">
+  <img src="souHiyori.png">
+</p>
 
 In video games such as Danganronpa and Kimi ga Shine, the premise is that there is a game where multiple contestants who are forced to betray each other. The winner of said game will be the survivor(s). This simulation attempts to figure out who will win each game given a number of contestants with different attributes. Attributes are as follows:
 - Intelligence
