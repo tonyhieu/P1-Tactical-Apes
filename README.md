@@ -40,10 +40,10 @@ Each of these attributes will be on a scale from 1-10 aside from the relationshi
 
 ### Project Plan/Timeline 
 
-Fridays: Update Changelog with weekly coding updates. 
+Fridays: Update Changelog with weekly coding updates. Commit all finished/debugged code. Update any images/GIF's to reflect the newest version of the project. 
 
--Midterm: Physics pendulum and survival game projects with functioning MVC and Source Code
+-Midterm: Physics pendulum and survival game projects with functioning MVC and Source Code. Physics pendulum base simulation complete. Start adding user editable settings, start adding the functionality to save data periodically to database.
 
--N@TM: Complete the physics pendulum and survival game projects with online web support
+-N@TM: Complete the physics pendulum simulation, show exmple of simultion running and analysis of data. Finish survival game simulation projects with online web support.
 
--Final: Add and complete additional simulations
+-Final: Add and complete additional simulations. Topics will be chosen after current simulations are completed.
