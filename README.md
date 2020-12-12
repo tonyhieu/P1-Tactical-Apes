@@ -12,7 +12,7 @@ Our project will be a series of different simulations which put data into a data
 - [ ] Physics Pendulum
 - [ ] Survival Game (akin to things like Kimi ga Shine or Danganronpa)
 
-## Contributers
+## Contributors
 | GitHub Username | Person |
 | --- | --- |
 | [@VihanJ](https://github.com/VihanJ) | Vihan Jayaraman |
