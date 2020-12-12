@@ -45,3 +45,5 @@ Fridays: Update Changelog with weekly coding updates.
 -Midterm: Physics pendulum and survival game projects with functioning MVC and Source Code
 
 -N@TM: Complete the physics pendulum and survival game projects with online web support
+
+-Final: Add and complete additional simulations
