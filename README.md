@@ -20,6 +20,13 @@ Our project will be a series of different simulations which put data into a data
 | [@YasaswiS](https://github.com/YasaswiS) | Yasaswi Singamneni |
 | [@tonyhieu](https://github.com/tonyhieu) | Anthony Vo |
 
+<p align="center">
+  <img src="coolguy.PNG">
+  <br></br>
+  <em>Yasaswi Singamneni</em>
+</p>
+
+
 ## Database
 We will use databases in order to store data received from our simulations. For example, our physics simulations will store the velocity, acceleration, and position of an object at certain times. Our survival game simulation will store the winner of said games and their attributes.
 
@@ -28,7 +35,6 @@ We will use databases in order to store data received from our simulations. For 
 ### Physics Pendulum
 <p align="center">
   <img width="400" height="300" src="https://rotations.berkeley.edu/wp-content/uploads/2017/10/double-pendulum.png">
-  <img src="coolguy.PNG">
 </p>
 
 This simulation will simulate the chaotic double pendulum as seen [here](https://rotations.berkeley.edu/wp-content/uploads/2017/10/double-pendulum.png) and allow the user to edit things such as the mass of each pendulum, the length of the pendulum, and the starting position. We will store info about acceleration, velocity postion, forces, angles, and others at a regular interval in a database, so that they can be used for visualsations and analysis.
