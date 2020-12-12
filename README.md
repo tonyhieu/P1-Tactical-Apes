@@ -29,13 +29,15 @@ We will use databases in order to store data received from our simulations. For 
 This simulation will simulate the chaotic double pendulum as seen [here](https://rotations.berkeley.edu/wp-content/uploads/2017/10/double-pendulum.png) and allow the user to edit things such as the mass of each pendulum, the length of the pendulum, and the starting position. We will store info about acceleration, velocity postion, forces, angles, and others at a regular interval in a database, so that they can be used for visualsations and analysis.
 
 ### Survival Game
+
+<img align="center" src="media/souHiyori.PNG">
+
 In video games such as Danganronpa and Kimi ga Shine, the premise is that there is a game where multiple contestants who are forced to betray each other. The winner of said game will be the survivor(s). This simulation attempts to figure out who will win each game given a number of contestants with different attributes. Attributes are as follows:
 - Intelligence
 - Strength
 - Sociability
 - Empathy
 - Pre-existing Relationships w/ Other Contestants
-https://static.wikia.nocookie.net/kimi-ga-shine/images/2/22/Cara19-1.png/revision/latest/smart/width/200/height/200?cb=20190730223348
 Each of these attributes will be on a scale from 1-10 aside from the relationships which will be set to strangers by default. By calculating each of these traits, we can predict who will be eliminated and what effect that will have on the other contestants. At the end, only 1-2 people will be left, and the winners will be put into the database along with their traits.
 
 ### Project Plan/Timeline 
