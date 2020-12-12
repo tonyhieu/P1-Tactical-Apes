@@ -28,6 +28,7 @@ We will use databases in order to store data received from our simulations. For 
 ### Physics Pendulum
 <p align="center">
   <img width="400" height="300" src="https://rotations.berkeley.edu/wp-content/uploads/2017/10/double-pendulum.png">
+  <img src="coolguy.PNG">
 </p>
 
 This simulation will simulate the chaotic double pendulum as seen [here](https://rotations.berkeley.edu/wp-content/uploads/2017/10/double-pendulum.png) and allow the user to edit things such as the mass of each pendulum, the length of the pendulum, and the starting position. We will store info about acceleration, velocity postion, forces, angles, and others at a regular interval in a database, so that they can be used for visualsations and analysis.
