@@ -21,7 +21,7 @@ Our project will be a series of different simulations which put data into a data
 | [@tonyhieu](https://github.com/tonyhieu) | Anthony Vo |
 
 <p align="center">
-  <img src="coolguy.PNG">
+  <img src="media/coolguy.PNG">
   <br></br>
   <em>Yasaswi Singamneni</em>
 </p>
@@ -42,7 +42,7 @@ This simulation will simulate the chaotic double pendulum as seen [here](https:/
 ### Survival Game
 
 <p align="center">
-  <img src="souHiyori.png">
+  <img src="media/souHiyori.png">
 </p>
 
 In video games such as Danganronpa and Kimi ga Shine, the premise is that there is a game where multiple contestants who are forced to betray each other. The winner of said game will be the survivor(s). This simulation attempts to figure out who will win each game given a number of contestants with different attributes. Attributes are as follows:
