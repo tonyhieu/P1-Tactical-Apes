@@ -20,11 +20,6 @@ Our project will be a series of different simulations which put data into a data
 | [@YasaswiS](https://github.com/YasaswiS) | Yasaswi Singamneni |
 | [@tonyhieu](https://github.com/tonyhieu) | Anthony Vo |
 
-<p align="center">
-  <img src="media/coolguy.PNG">
-  <br></br>
-  <em>Yasaswi Singamneni</em>
-</p>
 
 
 ## Database
