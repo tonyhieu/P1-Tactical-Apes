@@ -18,6 +18,8 @@ import java.util.Hashtable;
 
 import java.util.*;
 
+
+//The code for managing the UI.
 public class DoublePendulumView {
     public JButton addPendulum;
     public ArrayList<JButton> pendulumButtonList = new ArrayList<JButton>();
@@ -33,10 +35,10 @@ public class DoublePendulumView {
 
     }
 
+    //start menu
     public void menu(){
 
         //Initializing GUI that will let the user choose if they want to edit
-        // pendulum 1, pendulum 2, or start the simulation.
         JFrame frame = new JFrame();
         startPanel = new JPanel();
 
@@ -44,9 +46,7 @@ public class DoublePendulumView {
 
         addPendulum = new JButton("Add a pendulum");
 
-
-
-
+        
         JButton globalSettings = new JButton("Edit global properties (like gravity)");
         JButton runSimulation = new JButton("Run Simulation");
 
@@ -72,6 +72,7 @@ public class DoublePendulumView {
         addPendulum.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                control.addPendulumInfo();
                 addPendulumButton();
             }
         });
@@ -87,7 +88,6 @@ public class DoublePendulumView {
     }
 
     public void addPendulumButton() {
-        System.out.println("Add Pendulum Button is Called");
         //to get index of pendulumbutton, subtract 1
         int pendulumNumber = pendulumButtonList.size()+1;
 
@@ -108,39 +108,56 @@ public class DoublePendulumView {
     }
     public void pendulumMenu(int pendulumNumber) {
 
-
+        int pendulumIndex = pendulumNumber-1;
+        PendulumBuilder pendulumInfo = control.pendulumsInfo.get(pendulumIndex);
         //Creates JFrame and JPanel for GUI
 
-        JFrame pendulum1Frame = new JFrame();
-        JPanel pendulum1Panel = new JPanel();
+        JFrame pendulumFrame = new JFrame();
+        JPanel pendulumPanel = new JPanel();
 
         JLabel title = new JLabel("Pendulum " + Integer.toString(pendulumNumber));
-        JLabel massTitle = new JLabel("Enter the length of the rod (cm):");
-        JLabel lengthTitle = new JLabel("Enter the mass of the weight (in g):");
+        JLabel rodLengthTitle = new JLabel("Enter the length of the rod (cm):");
+        JLabel weightMassTitle = new JLabel("Enter the mass of the weight (in g):");
 
-        JTextField pendulumLength = new JTextField();
-        JTextField pendulumMass = new JTextField();
-        JButton setValues = new JButton("Click to set values");
+        JTextField pendulumRodLength = new JTextField(Integer.toString(pendulumInfo.rodLength));
 
-        pendulum1Frame.setSize(800, 800);
-        pendulum1Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        pendulum1Frame.setVisible(true);
-        pendulum1Frame.add(pendulum1Panel);
+        pendulumRodLength.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pendulumInfo.setRodLength(Integer.parseInt(pendulumRodLength.getText()));
+            }
+        });
 
-        pendulum1Panel.setLayout(null);
-        pendulum1Panel.add(title);
+        JTextField pendulumWeightMass = new JTextField(Integer.toString(pendulumInfo.weightMass));
 
-        pendulum1Panel.add(pendulumLength);
-        pendulum1Panel.add(lengthTitle);
-        pendulum1Panel.add(pendulumMass);
-        pendulum1Panel.add(massTitle);
-        pendulum1Panel.add(setValues);
+        pendulumWeightMass.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pendulumInfo.setWeightMass((Integer.parseInt(pendulumWeightMass.getText())));
+            }
+        });
+
+        JButton setValues = new JButton("Enter Pendulum Properties");
+
+        pendulumFrame.setSize(800, 800);
+        pendulumFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        pendulumFrame.setVisible(true);
+        pendulumFrame.add(pendulumPanel);
+
+        pendulumPanel.setLayout(null);
+        pendulumPanel.add(title);
+
+        pendulumPanel.add(pendulumRodLength);
+        pendulumPanel.add(rodLengthTitle);
+        pendulumPanel.add(weightMassTitle);
+        pendulumPanel.add(pendulumWeightMass);
+        pendulumPanel.add(setValues);
 
         title.setBounds(333,50,200,50);
-        massTitle.setBounds(50, 150, 300, 50);
-        pendulumMass.setBounds(300,150,200,50);
-        pendulumLength.setBounds(300,250,200,50);
-        lengthTitle.setBounds(50, 250, 300, 50);
+        weightMassTitle.setBounds(50, 150, 300, 50);
+        pendulumWeightMass.setBounds(300,150,200,50);
+        pendulumRodLength.setBounds(300,250,200,50);
+        rodLengthTitle.setBounds(50, 250, 300, 50);
         setValues.setBounds(300,550, 200,75);
     }
 

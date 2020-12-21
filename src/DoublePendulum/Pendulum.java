@@ -1,5 +1,6 @@
 package DoublePendulum;
 
+//To be used in DoublePendulumModel to hold data for each of the two pendulums
 public class Pendulum {
     int rodMass;
     int rodLength;

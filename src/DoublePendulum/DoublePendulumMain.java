@@ -1,5 +1,8 @@
 package DoublePendulum;
 
+import java.util.*;
+
+//Links MVC together
 public class DoublePendulumMain {
     DoublePendulumControl control;
     DoublePendulumModel model;
