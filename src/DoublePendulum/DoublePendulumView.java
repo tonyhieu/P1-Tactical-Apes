@@ -64,6 +64,16 @@ public class DoublePendulumView {
             }
         });
 
+        //Button to open panel that will allow thee user to change
+        //the properties of pendulum 2
+        pendulum2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DoublePendulumView configurePendulum2 = new DoublePendulumView();
+                configurePendulum2.setPendulum2();
+            }
+        });
+
 
     }
 
@@ -100,8 +110,41 @@ public class DoublePendulumView {
         pendulum1Mass.setBounds(300,150,200,50);
         pendulum1Length.setBounds(300,250,200,50);
         lengthTitle.setBounds(50, 250, 300, 50);
+    }
 
+    public void setPendulum2(){
 
+        //Creates JFrame and JPanel for GUI
+
+        JFrame pendulum2Frame = new JFrame();
+        JPanel pendulum2Panel = new JPanel();
+
+        JLabel title = new JLabel("Pendulum 2 Properties");
+        JLabel massTitle = new JLabel("Enter the length of Pendulum 2 (in cm)");
+        JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 2 (in g)");
+
+        JTextField pendulum2Length = new JTextField();
+        JTextField pendulum2Mass = new JTextField();
+        JButton setValues = new JButton("Click to set values");
+
+        pendulum2Frame.setSize(800, 800);
+        pendulum2Frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        pendulum2Frame.setVisible(true);
+        pendulum2Frame.add(pendulum2Panel);
+
+        pendulum2Panel.setLayout(null);
+        pendulum2Panel.add(title);
+
+        pendulum2Panel.add(pendulum2Length);
+        pendulum2Panel.add(lengthTitle);
+        pendulum2Panel.add(pendulum2Mass);
+        pendulum2Panel.add(massTitle);
+
+        title.setBounds(333,50,200,50);
+        massTitle.setBounds(50, 150, 300, 50);
+        pendulum2Mass.setBounds(300,150,200,50);
+        pendulum2Length.setBounds(300,250,200,50);
+        lengthTitle.setBounds(50, 250, 300, 50);
     }
 
 
