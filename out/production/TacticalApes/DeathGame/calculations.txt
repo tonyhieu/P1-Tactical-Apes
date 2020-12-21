@@ -1,0 +1,27 @@
+explanation for calculations
+
+4 attributes:
+intelligence: self explanatory
+strength: self explanatory
+sociability: introverted vs extraverted
+empathy: basically kindness, understanding of emotions
+
+for example, byakuya togami would have high intelligence, low strength, medium-high sociability and low empathy
+
+we have to run a few calculations, but they boil down to chance of killing and chance of dying.
+
+chance of dying is broken into:
+- ease of killing (low sociability, low strength)
+- lack of will to live (low sociability, low empathy, no relationships)
+- how much of a threat they are (high intelligence, high sociability)
+
+chance of killing is broken into:
+- likelihood of success (high strength)
+- likelihood of escape/getting away with it (high sociability, high empathy, high intelligence)
+- lack of relationships (they don't want to kill their friends, so low empathy)
+
+lastly, we have to combine the chances of people killing/dying in order to create a comprehensive probability.
+we can do this by dividing the individual chances by the sum of chances.
+
+we will add another probability: after the murderer is chosen, they will have a chance of getting away with it.
+this allows for differing death games where the murderer actually wins.
