@@ -33,6 +33,7 @@ public class DoublePendulumView {
         JPanel startPanel = new JPanel();
         JButton pendulum1 = new JButton("Edit properties of pendulum 1");
         JButton pendulum2 = new JButton("Edit properties of pendulum 2");
+        JButton globalSettings = new JButton("Edit global properties (like gravity)");
         JButton runSimulation = new JButton("Run Simulation");
 
 
@@ -47,12 +48,14 @@ public class DoublePendulumView {
         startPanel.setPreferredSize(new Dimension(900,900));
         startPanel.add(pendulum1);
         startPanel.add(pendulum2);
+        startPanel.add(globalSettings);
         startPanel.add(runSimulation);
 
         //Specifies location and size of button on initial panel
         pendulum1.setBounds(50,50,800,100);
-        pendulum2.setBounds(50,250,800,100);
-        runSimulation.setBounds(250,500,400,200);
+        pendulum2.setBounds(50,200,800,100);
+        globalSettings.setBounds(50,350,800,100);
+        runSimulation.setBounds(350,500,200,200);
 
         //Button to open panel that will allow thee user to change
         //the properties of pendulum 1
@@ -71,6 +74,14 @@ public class DoublePendulumView {
             public void actionPerformed(ActionEvent e) {
                 DoublePendulumView configurePendulum2 = new DoublePendulumView();
                 configurePendulum2.setPendulum2();
+            }
+        });
+
+        globalSettings.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DoublePendulumView configureGlobalSettings = new DoublePendulumView();
+                configureGlobalSettings.setGlobal();
             }
         });
 
@@ -145,6 +156,31 @@ public class DoublePendulumView {
         pendulum2Mass.setBounds(300,150,200,50);
         pendulum2Length.setBounds(300,250,200,50);
         lengthTitle.setBounds(50, 250, 300, 50);
+    }
+
+
+    public void setGlobal(){
+
+        JFrame globalFrame = new JFrame();
+        JPanel globalPanel = new JPanel();
+
+        JLabel title = new JLabel("Global Properties and Simulation Settings");
+        JLabel gravityTitle = new JLabel("Enter gravitational constant (in m/s^2)");
+        JTextField gravity = new JTextField();
+
+        globalFrame.setSize(800, 800);
+        globalFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        globalFrame.setVisible(true);
+        globalFrame.add(globalPanel);
+
+        globalPanel.setLayout(null);
+        globalPanel.add(title);
+        globalPanel.add(gravityTitle);
+        globalPanel.add(gravity);
+
+        title.setBounds(400,50,400,50);
+        gravityTitle.setBounds(50, 150, 300, 50);
+        gravity.setBounds(300,150,200,50);
     }
 
 
