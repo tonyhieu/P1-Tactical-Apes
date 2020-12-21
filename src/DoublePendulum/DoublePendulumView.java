@@ -19,9 +19,9 @@ public class DoublePendulumView {
     public JButton pendulum1;
     public JButton pendulum2;
     public JButton simulation;
-    public HashMap<String, Integer> pendulum1Settings = new HashMap<String, Integer>();
-    public HashMap<String, Integer> pendulum2Settings = new HashMap<String, Integer>();
-    public HashMap<String, Double> simulationSettings = new HashMap<String, Double>();
+    public static HashMap<String, Integer> pendulum1Settings = new HashMap<String, Integer>();
+    public static HashMap<String, Integer> pendulum2Settings = new HashMap<String, Integer>();
+    public static HashMap<String, Double> simulationSettings = new HashMap<String, Double>();
 
 
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class DoublePendulumView {
         DoublePendulum.startSimulation();
     }
 
-    public void startSimulation(){
+    public void startSimulation() {
 
         //Initializing GUI that will let the user choose if they want to edit
         // pendulum 1, pendulum 2, or start the simulation.
@@ -49,21 +49,23 @@ public class DoublePendulumView {
 
         //Adds buttons to frame for user interaction
         startPanel.setLayout(null);
-        startPanel.setPreferredSize(new Dimension(900,900));
+        startPanel.setPreferredSize(new Dimension(900, 900));
         startPanel.add(pendulum1);
         startPanel.add(pendulum2);
         startPanel.add(globalSettings);
         startPanel.add(runSimulation);
 
         //Specifies location and size of button on initial panel
-        pendulum1.setBounds(50,50,800,100);
-        pendulum2.setBounds(50,200,800,100);
-        globalSettings.setBounds(50,350,800,100);
-        runSimulation.setBounds(350,500,200,200);
+        pendulum1.setBounds(50, 50, 800, 100);
+        pendulum2.setBounds(50, 200, 800, 100);
+        globalSettings.setBounds(50, 350, 800, 100);
+        runSimulation.setBounds(350, 500, 200, 200);
 
 
         pendulum1Settings.put("mass", 1);
         pendulum1Settings.put("length", 1);
+
+
 
         pendulum2Settings.put("mass", 1);
         pendulum2Settings.put("length", 1);
@@ -100,11 +102,9 @@ public class DoublePendulumView {
         });
 
 
-
-
     }
 
-    public void setPendulum1(){
+    public void setPendulum1() {
 
         //Creates JFrame and JPanel for GUI
 
@@ -115,8 +115,8 @@ public class DoublePendulumView {
         JLabel massTitle = new JLabel("Enter the length of Pendulum 1 (in cm):");
         JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 1 (in g):");
 
-        JTextField pendulum1Length = new JTextField();
-        JTextField pendulum1Mass = new JTextField();
+        JTextField pendulum1Length = new JTextField(Double.toString(pendulum1Settings.get("length")));
+        JTextField pendulum1Mass = new JTextField(Double.toString(pendulum1Settings.get("mass")));
         JButton setValues = new JButton("Click to set values");
 
         pendulum1Frame.setSize(800, 800);
@@ -133,19 +133,19 @@ public class DoublePendulumView {
         pendulum1Panel.add(massTitle);
         pendulum1Panel.add(setValues);
 
-        title.setBounds(333,50,200,50);
+        title.setBounds(333, 50, 200, 50);
         massTitle.setBounds(50, 150, 300, 50);
-        pendulum1Mass.setBounds(300,150,200,50);
-        pendulum1Length.setBounds(300,250,200,50);
+        pendulum1Mass.setBounds(300, 150, 200, 50);
+        pendulum1Length.setBounds(300, 250, 200, 50);
         lengthTitle.setBounds(50, 250, 300, 50);
-        setValues.setBounds(300,550, 200,75);
+        setValues.setBounds(300, 550, 200, 75);
 
         setValues.addActionListener(e -> {
             pendulum1Frame.dispose();
         });
     }
 
-    public void setPendulum2(){
+    public void setPendulum2() {
 
         //Creates JFrame and JPanel for GUI
 
@@ -156,8 +156,8 @@ public class DoublePendulumView {
         JLabel massTitle = new JLabel("Enter the length of Pendulum 2 (in cm):");
         JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 2 (in g):");
 
-        JTextField pendulum2Length = new JTextField();
-        JTextField pendulum2Mass = new JTextField();
+        JTextField pendulum2Length = new JTextField(Double.toString(pendulum2Settings.get("length")));
+        JTextField pendulum2Mass = new JTextField(Double.toString(pendulum2Settings.get("mass")));
         JButton setValues = new JButton("Click to set values");
 
         pendulum2Frame.setSize(800, 800);
@@ -174,12 +174,12 @@ public class DoublePendulumView {
         pendulum2Panel.add(massTitle);
         pendulum2Panel.add(setValues);
 
-        title.setBounds(333,50,200,50);
+        title.setBounds(333, 50, 200, 50);
         massTitle.setBounds(50, 150, 300, 50);
-        pendulum2Mass.setBounds(300,150,200,50);
-        pendulum2Length.setBounds(300,250,200,50);
+        pendulum2Mass.setBounds(300, 150, 200, 50);
+        pendulum2Length.setBounds(300, 250, 200, 50);
         lengthTitle.setBounds(50, 250, 300, 50);
-        setValues.setBounds(300,550, 200,75);
+        setValues.setBounds(300, 550, 200, 75);
 
         setValues.addActionListener(e -> {
             pendulum2Frame.dispose();
@@ -187,7 +187,7 @@ public class DoublePendulumView {
     }
 
 
-    public void setGlobal(){
+    public void setGlobal() {
 
         JFrame globalFrame = new JFrame();
         JPanel globalPanel = new JPanel();
@@ -195,7 +195,7 @@ public class DoublePendulumView {
         JLabel title = new JLabel("Global Properties and Simulation Settings");
         JLabel gravityTitle = new JLabel("Enter gravitational constant (in m/s^2):");
 
-        JTextField gravity = new JTextField();
+        JTextField gravity = new JTextField(Double.toString(simulationSettings.get("gravity")));
         JButton setValues = new JButton("Click to set values");
 
         globalFrame.setSize(800, 800);
@@ -209,10 +209,10 @@ public class DoublePendulumView {
         globalPanel.add(gravity);
         globalPanel.add(setValues);
 
-        title.setBounds(275,50,400,50);
+        title.setBounds(275, 50, 400, 50);
         gravityTitle.setBounds(50, 150, 300, 50);
-        gravity.setBounds(300,150,200,50);
-        setValues.setBounds(300,550, 200,75);
+        gravity.setBounds(300, 150, 200, 50);
+        setValues.setBounds(300, 550, 200, 75);
 
         setValues.addActionListener(e -> {
             globalFrame.dispose();
