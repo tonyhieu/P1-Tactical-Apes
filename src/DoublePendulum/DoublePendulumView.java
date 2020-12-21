@@ -123,6 +123,10 @@ public class DoublePendulumView {
         pendulum1Length.setBounds(300,250,200,50);
         lengthTitle.setBounds(50, 250, 300, 50);
         setValues.setBounds(300,550, 200,75);
+
+        setValues.addActionListener(e -> {
+            pendulum1Frame.dispose();
+        });
     }
 
     public void setPendulum2(){
@@ -160,6 +164,10 @@ public class DoublePendulumView {
         pendulum2Length.setBounds(300,250,200,50);
         lengthTitle.setBounds(50, 250, 300, 50);
         setValues.setBounds(300,550, 200,75);
+
+        setValues.addActionListener(e -> {
+            pendulum2Frame.dispose();
+        });
     }
 
 
@@ -189,6 +197,10 @@ public class DoublePendulumView {
         gravityTitle.setBounds(50, 150, 300, 50);
         gravity.setBounds(300,150,200,50);
         setValues.setBounds(300,550, 200,75);
+
+        setValues.addActionListener(e -> {
+            globalFrame.dispose();
+        });
     }
 
 
