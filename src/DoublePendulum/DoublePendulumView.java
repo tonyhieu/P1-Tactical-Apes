@@ -13,12 +13,16 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.lang.*;
-import java.util.Hashtable;
+import java.util.HashMap;
 
 public class DoublePendulumView {
     public JButton pendulum1;
     public JButton pendulum2;
     public JButton simulation;
+    public HashMap<String, Integer> pendulum1Settings = new HashMap<String, Integer>();
+    public HashMap<String, Integer> pendulum2Settings = new HashMap<String, Integer>();
+    public HashMap<String, Double> simulationSettings = new HashMap<String, Double>();
+
 
     public static void main(String[] args) {
         DoublePendulumView DoublePendulum = new DoublePendulumView();
@@ -57,6 +61,16 @@ public class DoublePendulumView {
         globalSettings.setBounds(50,350,800,100);
         runSimulation.setBounds(350,500,200,200);
 
+
+        pendulum1Settings.put("mass", 1);
+        pendulum1Settings.put("length", 1);
+
+        pendulum2Settings.put("mass", 1);
+        pendulum2Settings.put("length", 1);
+
+        simulationSettings.put("gravity", 9.80);
+
+
         //Button to open panel that will allow thee user to change
         //the properties of pendulum 1
         pendulum1.addActionListener(new ActionListener() {
@@ -84,6 +98,8 @@ public class DoublePendulumView {
                 configureGlobalSettings.setGlobal();
             }
         });
+
+
 
 
     }
