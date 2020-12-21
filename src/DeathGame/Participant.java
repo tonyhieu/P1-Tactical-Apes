@@ -17,7 +17,6 @@ public class Participant {
 
     public float deathChance = 0;
     public float killChance = 0;
-    public float escChance = 0;
 
     public Participant (int intel, int str, int soc, int emp, Hashtable<Participant, Integer> relationships, String name) {
         this.intel = intel;
