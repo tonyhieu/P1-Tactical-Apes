@@ -1,5 +1,6 @@
 package DeathGame;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class DeathGameControl {
@@ -53,7 +54,8 @@ public class DeathGameControl {
         return score;
     }
 
-    public float getTotalDeathChance (Participant[] ps) {
+    //finds sum of all death chance
+    public float getTotalDeathChance (ArrayList<Participant> ps) {
         float sum = 0;
         for (Participant p : ps) {
             sum += p.deathChance;
@@ -61,7 +63,8 @@ public class DeathGameControl {
         return sum;
     }
 
-    public float getTotalKillChance (Participant[] ps) {
+    //finds sum of all kill chance
+    public float getTotalKillChance (ArrayList<Participant> ps) {
         float sum = 0;
         for (Participant p : ps) {
             sum += p.deathChance;
@@ -69,10 +72,88 @@ public class DeathGameControl {
         return sum;
     }
 
-    public void setChances (Participant[] ps) {
+    //sets chances for each participant
+    public void setChances (ArrayList<Participant> ps) {
+        float totalDeath = getTotalDeathChance(ps);
+        float totalKill = getTotalKillChance(ps);
+
         for (Participant p : ps) {
-            p.deathChance = getDeathChance(p);
-            p.killChance = getKillChance(p);
+            p.deathChance = getDeathChance(p)/totalDeath;
+            p.killChance = getKillChance(p)/totalKill;
         }
+    }
+
+    //chooses killer
+    public Participant chooseKiller (ArrayList<Participant> ps) {
+        //finds eligible killers
+        ArrayList<Participant> eligibles = new ArrayList<Participant>();
+        for (Participant p : ps) {
+            if (p.killChance > 0) {
+                eligibles.add(p);
+            }
+        }
+
+        //failsafe for if there are no eligible killers
+        if (eligibles.size() == 0) {
+            return ps.get( (int) Math.random() * ps.size());
+        }
+
+        //chooses killer using probability and random numbers
+        double roll = Math.random() * (100);
+        int index = 999;
+        float sum = 0;
+        int i = 0;
+        //checks if roll is in a certain range to choose killer
+        while (index == 999) {
+            if (sum < roll && roll < eligibles.get(i).killChance + sum) {
+                index = i;
+            } else {
+                i++;
+                sum += eligibles.get(i).killChance;
+            }
+        }
+
+        return eligibles.get(index);
+    }
+
+    //chooses victim
+    public Participant chooseVictim (ArrayList<Participant> ps) {
+        //finds eligible victims
+        ArrayList<Participant> eligibles = new ArrayList<Participant>();
+        for (Participant p : ps) {
+            if (p.deathChance > 0) {
+                eligibles.add(p);
+            }
+        }
+
+        //failsafe for if there are no eligible victims
+        if (eligibles.size() == 0) {
+            return ps.get( (int) Math.random() * ps.size());
+        }
+
+        //finds victim via probability
+        double roll = Math.random() * (100);
+        int index = 999;
+        float sum = 0;
+        int i = 0;
+        while (index == 999) {
+            if (sum < roll && roll < eligibles.get(i).deathChance + sum) {
+                index = i;
+            } else {
+                i++;
+                sum += eligibles.get(i).deathChance;
+            }
+        }
+
+        return eligibles.get(index);
+    }
+
+    //chance of getting away with the killing
+    public boolean escape (Participant p) {
+        double roll = Math.random() * (100);
+        double escapeChance = p.intel * 2 + p.emp;
+
+        return roll < escapeChance;
     }
 }
+
