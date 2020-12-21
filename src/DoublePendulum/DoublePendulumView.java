@@ -115,12 +115,14 @@ public class DoublePendulumView {
         pendulum1Panel.add(lengthTitle);
         pendulum1Panel.add(pendulum1Mass);
         pendulum1Panel.add(massTitle);
+        pendulum1Panel.add(setValues);
 
         title.setBounds(333,50,200,50);
         massTitle.setBounds(50, 150, 300, 50);
         pendulum1Mass.setBounds(300,150,200,50);
         pendulum1Length.setBounds(300,250,200,50);
         lengthTitle.setBounds(50, 250, 300, 50);
+        setValues.setBounds(300,550, 200,75);
     }
 
     public void setPendulum2(){
@@ -150,12 +152,14 @@ public class DoublePendulumView {
         pendulum2Panel.add(lengthTitle);
         pendulum2Panel.add(pendulum2Mass);
         pendulum2Panel.add(massTitle);
+        pendulum2Panel.add(setValues);
 
         title.setBounds(333,50,200,50);
         massTitle.setBounds(50, 150, 300, 50);
         pendulum2Mass.setBounds(300,150,200,50);
         pendulum2Length.setBounds(300,250,200,50);
         lengthTitle.setBounds(50, 250, 300, 50);
+        setValues.setBounds(300,550, 200,75);
     }
 
 
@@ -166,7 +170,9 @@ public class DoublePendulumView {
 
         JLabel title = new JLabel("Global Properties and Simulation Settings");
         JLabel gravityTitle = new JLabel("Enter gravitational constant (in m/s^2):");
+
         JTextField gravity = new JTextField();
+        JButton setValues = new JButton("Click to set values");
 
         globalFrame.setSize(800, 800);
         globalFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -177,10 +183,12 @@ public class DoublePendulumView {
         globalPanel.add(title);
         globalPanel.add(gravityTitle);
         globalPanel.add(gravity);
+        globalPanel.add(setValues);
 
         title.setBounds(275,50,400,50);
         gravityTitle.setBounds(50, 150, 300, 50);
         gravity.setBounds(300,150,200,50);
+        setValues.setBounds(300,550, 200,75);
     }
 
 
