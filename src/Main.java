@@ -17,7 +17,7 @@ public class Main {
 
         //frame settings
         menuFrame.setSize(500, 500);
-        menuFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        menuFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         menuFrame.setVisible(true);
         menuFrame.add(menuPanel);
 
