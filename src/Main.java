@@ -44,7 +44,7 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DoublePendulumView doublependulumview = new DoublePendulumView();
-                doublependulumview.startSimulation();
+                doublependulumview.main(null);
             }
         });
 
