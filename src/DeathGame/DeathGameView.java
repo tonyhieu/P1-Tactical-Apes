@@ -25,6 +25,7 @@ public class DeathGameView {
         initialize.RunDeathGameView();
     }
     public void RunDeathGameView() {
+        //initialize variables
         JFrame frame = new JFrame();
         JPanel startPanel = new JPanel();
         JButton participant1 = new JButton("Participant 1");
@@ -64,6 +65,7 @@ public class DeathGameView {
         startSimulation.setBounds(350,500,200,200);
         //Scroller.setBounds(850,0,50,200);
 
+        //Logic for buttons pressed
         participant1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -153,12 +155,13 @@ public class DeathGameView {
         JButton createParticipant = new JButton("Create Participant");
 
 
-
+        //frame settings
         frame2.setSize(800, 800);
         frame2.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame2.setVisible(true);
         frame2.add(secondPanel);
 
+        //adding objects to panel
         secondPanel.setLayout(null);
         secondPanel.add(name);
         secondPanel.add(enterName);
@@ -178,6 +181,7 @@ public class DeathGameView {
         secondPanel.add(enterRelationships);
         secondPanel.add(createParticipant);
 
+        //Setting dimensions and locations for my objects
         name.setBounds(50,50,200,50);
         enterName.setBounds(300,50,200,50);
         intelligence.setBounds(50,150,200,50);
@@ -196,7 +200,7 @@ public class DeathGameView {
         enterRelationships.setBounds(50,600,200,50);
         createParticipant.setBounds(450,525,200,200);
 
-
+        //logic for changing sliders
         slider1.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 slider1label.setText("" + ((JSlider)e.getSource()).getValue());
