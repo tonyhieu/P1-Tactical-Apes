@@ -96,8 +96,8 @@ public class DoublePendulumView {
         JPanel pendulum1Panel = new JPanel();
 
         JLabel title = new JLabel("Pendulum 1 Properties");
-        JLabel massTitle = new JLabel("Enter the length of Pendulum 1 (in cm)");
-        JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 1 (in g)");
+        JLabel massTitle = new JLabel("Enter the length of Pendulum 1 (in cm):");
+        JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 1 (in g):");
 
         JTextField pendulum1Length = new JTextField();
         JTextField pendulum1Mass = new JTextField();
@@ -131,8 +131,8 @@ public class DoublePendulumView {
         JPanel pendulum2Panel = new JPanel();
 
         JLabel title = new JLabel("Pendulum 2 Properties");
-        JLabel massTitle = new JLabel("Enter the length of Pendulum 2 (in cm)");
-        JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 2 (in g)");
+        JLabel massTitle = new JLabel("Enter the length of Pendulum 2 (in cm):");
+        JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 2 (in g):");
 
         JTextField pendulum2Length = new JTextField();
         JTextField pendulum2Mass = new JTextField();
@@ -165,7 +165,7 @@ public class DoublePendulumView {
         JPanel globalPanel = new JPanel();
 
         JLabel title = new JLabel("Global Properties and Simulation Settings");
-        JLabel gravityTitle = new JLabel("Enter gravitational constant (in m/s^2)");
+        JLabel gravityTitle = new JLabel("Enter gravitational constant (in m/s^2):");
         JTextField gravity = new JTextField();
 
         globalFrame.setSize(800, 800);
@@ -178,7 +178,7 @@ public class DoublePendulumView {
         globalPanel.add(gravityTitle);
         globalPanel.add(gravity);
 
-        title.setBounds(400,50,400,50);
+        title.setBounds(275,50,400,50);
         gravityTitle.setBounds(50, 150, 300, 50);
         gravity.setBounds(300,150,200,50);
     }
