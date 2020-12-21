@@ -10,7 +10,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.lang.*;
-import java.util.Hashtable;
+import java.util.*;
 
 
 public class DeathGameView {
@@ -44,8 +44,8 @@ public class DeathGameView {
         frame.setSize(900, 900);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
-        frame.add(startPanel);
         //frame.add(Scroller);
+        frame.add(startPanel);
         //frame.add(BorderLayout.CENTER, new JScrollPane(startPanel));
 
         //Panel adds objects to view
@@ -219,4 +219,5 @@ public class DeathGameView {
         });
 
     }
+
 }
