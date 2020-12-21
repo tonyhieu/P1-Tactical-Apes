@@ -32,6 +32,20 @@ public class DeathGameView {
         JButton participant2 = new JButton("Participant 2");
         JButton participant3 = new JButton("Participant 3");
         JButton startSimulation = new JButton("Start Simulation");
+        int p1intel;
+        int p1str;
+        int p1soc;
+        int p1emp;
+        int p2intel;
+        int p2str;
+        int p2soc;
+        int p2emp;
+        int p3intel;
+        int p3str;
+        int p3soc;
+        int p3emp;
+
+
         //JScrollPane Scroller = new JScrollPane(startPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         //Scroller.setEnabled(true);
         //Scroller.setSize(500,500);
@@ -87,6 +101,12 @@ public class DeathGameView {
                 secondview.SecondView();
             }
         });
+        /*startSimulation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               frame.dispose();
+            }
+        });*/
 
 
     }
