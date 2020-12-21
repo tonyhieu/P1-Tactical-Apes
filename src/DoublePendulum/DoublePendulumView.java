@@ -19,8 +19,8 @@ public class DoublePendulumView {
     public JButton pendulum1;
     public JButton pendulum2;
     public JButton simulation;
-    public static HashMap<String, Integer> pendulum1Settings = new HashMap<String, Integer>();
-    public static HashMap<String, Integer> pendulum2Settings = new HashMap<String, Integer>();
+    public static HashMap<String, Double> pendulum1Settings = new HashMap<String, Double>();
+    public static HashMap<String, Double> pendulum2Settings = new HashMap<String, Double>();
     public static HashMap<String, Double> simulationSettings = new HashMap<String, Double>();
 
 
@@ -62,13 +62,13 @@ public class DoublePendulumView {
         runSimulation.setBounds(350, 500, 200, 200);
 
 
-        pendulum1Settings.put("mass", 1);
-        pendulum1Settings.put("length", 1);
+        pendulum1Settings.put("mass", 1.0);
+        pendulum1Settings.put("length", 1.0);
 
 
 
-        pendulum2Settings.put("mass", 1);
-        pendulum2Settings.put("length", 1);
+        pendulum2Settings.put("mass", 1.0);
+        pendulum2Settings.put("length", 1.0);
 
         simulationSettings.put("gravity", 9.80);
 
@@ -141,6 +141,8 @@ public class DoublePendulumView {
         setValues.setBounds(300, 550, 200, 75);
 
         setValues.addActionListener(e -> {
+            pendulum1Settings.put("mass", Double.parseDouble(pendulum1Mass.getText()));
+            pendulum1Settings.put("length", Double.parseDouble(pendulum1Length.getText()));
             pendulum1Frame.dispose();
         });
     }
@@ -182,6 +184,8 @@ public class DoublePendulumView {
         setValues.setBounds(300, 550, 200, 75);
 
         setValues.addActionListener(e -> {
+            pendulum2Settings.put("mass", Double.parseDouble(pendulum2Mass.getText()));
+            pendulum2Settings.put("length", Double.parseDouble(pendulum2Length.getText()));
             pendulum2Frame.dispose();
         });
     }
@@ -215,6 +219,7 @@ public class DoublePendulumView {
         setValues.setBounds(300, 550, 200, 75);
 
         setValues.addActionListener(e -> {
+            simulationSettings.put("gravity", Double.parseDouble(gravity.getText()));
             globalFrame.dispose();
         });
     }
