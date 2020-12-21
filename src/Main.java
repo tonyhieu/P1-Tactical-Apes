@@ -1,7 +1,14 @@
+import DoublePendulum.DoublePendulumMain;
+
 public class Main {
 
     public static void main (String[] args) {
-        System.out.println("anthony is dumb");
+
+
+        //pendulum simulation tests
+        DoublePendulumMain pendulumSimulation = new DoublePendulumMain();
+        pendulumSimulation.start();
+
     }
 
 }
