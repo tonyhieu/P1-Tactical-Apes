@@ -12,9 +12,7 @@ import java.lang.*;
 import java.util.HashMap;
 
 public class DoublePendulumView {
-    public JButton pendulum1;
-    public JButton pendulum2;
-    public JButton simulation;
+
     public static HashMap<String, Double> pendulum1Settings = new HashMap<String, Double>();
     public static HashMap<String, Double> pendulum2Settings = new HashMap<String, Double>();
     public static HashMap<String, Double> simulationSettings = new HashMap<String, Double>();
@@ -98,8 +96,19 @@ public class DoublePendulumView {
             }
         });
 
+        runSimulation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DoublePendulumView Simulation = new DoublePendulumView();
+                Simulation.simulation();
+
+            }
+        });
+
 
     }
+
+
 
     public void setPendulum1() {
 
@@ -109,8 +118,8 @@ public class DoublePendulumView {
         JPanel pendulum1Panel = new JPanel();
 
         JLabel title = new JLabel("Pendulum 1 Properties");
-        JLabel massTitle = new JLabel("Enter the length of Pendulum 1 (in cm):");
-        JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 1 (in g):");
+        JLabel massTitle = new JLabel("Enter the length of Pendulum 1 (in g):");
+        JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 1 (in cm):");
 
         JTextField pendulum1Length = new JTextField(Double.toString(pendulum1Settings.get("length")));
         JTextField pendulum1Mass = new JTextField(Double.toString(pendulum1Settings.get("mass")));
@@ -133,6 +142,7 @@ public class DoublePendulumView {
         title.setBounds(333, 50, 200, 50);
         massTitle.setBounds(50, 150, 300, 50);
         pendulum1Mass.setBounds(300, 150, 200, 50);
+
         pendulum1Length.setBounds(300, 250, 200, 50);
         lengthTitle.setBounds(50, 250, 300, 50);
         setValues.setBounds(300, 550, 200, 75);
@@ -152,8 +162,8 @@ public class DoublePendulumView {
         JPanel pendulum2Panel = new JPanel();
 
         JLabel title = new JLabel("Pendulum 2 Properties");
-        JLabel massTitle = new JLabel("Enter the length of Pendulum 2 (in cm):");
-        JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 2 (in g):");
+        JLabel massTitle = new JLabel("Enter the length of Pendulum 2 (in g):");
+        JLabel lengthTitle = new JLabel("Enter the mass of Pendulum 2 (in cm):");
 
         JTextField pendulum2Length = new JTextField(Double.toString(pendulum2Settings.get("length")));
         JTextField pendulum2Mass = new JTextField(Double.toString(pendulum2Settings.get("mass")));
@@ -219,6 +229,24 @@ public class DoublePendulumView {
             simulationSettings.put("gravity", Double.parseDouble(gravity.getText()));
             globalFrame.dispose();
         });
+    }
+
+    public void simulation(){
+        JFrame simulationFrame = new JFrame();
+        JPanel simulationPanel = new JPanel();
+
+        JLabel title = new JLabel("simulation running");
+        JLabel value = new JLabel(Double.toString(pendulum1Settings.get("mass")));
+
+        simulationFrame.setSize(800, 800);
+        simulationFrame.setVisible(true);
+        simulationFrame.add(simulationPanel);
+
+        simulationFrame.setLayout(null);
+        simulationFrame.add(title);
+        simulationFrame.add(value);
+        title.setBounds(350, 50, 400, 50);
+        value.setBounds(350, 100, 400, 50);
     }
 
 
