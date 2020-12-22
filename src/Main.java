@@ -15,6 +15,8 @@ public class Main {
         JButton deathGame = new JButton("Death Game Simulation");
         JButton doublePendulum = new JButton("Double Pendulum Simulation");
 
+
+
         //frame settings
         menuFrame.setSize(500, 500);
         menuFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
