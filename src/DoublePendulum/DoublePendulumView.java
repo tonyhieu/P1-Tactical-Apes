@@ -23,6 +23,7 @@ public class DoublePendulumView {
     public static void main(String[] args) {
         DoublePendulumView DoublePendulum = new DoublePendulumView();
         DoublePendulum.startSimulation();
+        System.out.println(DoublePendulum.pendulum2Settings.get("mass"));
     }
 
     public void startSimulation() {
