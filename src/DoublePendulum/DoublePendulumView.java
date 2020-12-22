@@ -102,6 +102,7 @@ public class DoublePendulumView {
                 DoublePendulumView Simulation = new DoublePendulumView();
                 Simulation.simulation();
 
+
             }
         });
 
@@ -231,7 +232,7 @@ public class DoublePendulumView {
         });
     }
 
-    public void simulation(){
+    public void simulation() {
         JFrame simulationFrame = new JFrame();
         JPanel simulationPanel = new JPanel();
 
@@ -247,6 +248,8 @@ public class DoublePendulumView {
         simulationFrame.add(value);
         title.setBounds(350, 50, 400, 50);
         value.setBounds(350, 100, 400, 50);
+
+
     }
 
 
