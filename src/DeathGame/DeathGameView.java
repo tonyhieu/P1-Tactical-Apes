@@ -14,6 +14,9 @@ import java.util.*;
 
 
 public class DeathGameView {
+    
+
+    //JPanel variables
     public JButton participant1;
     public JButton participant2;
     public JButton participant3;
@@ -121,7 +124,7 @@ public class DeathGameView {
 
         //set intelligence and initialize hashtable
         JLabel intelligence = new JLabel("Intelligence");
-        JSlider slider1 = new JSlider(0,10,5);
+        JSlider intSlider = new JSlider(0,10,5);
         Hashtable position = new Hashtable();
         position.put(0, new JLabel("0"));
         position.put(1, new JLabel("1"));
@@ -134,38 +137,38 @@ public class DeathGameView {
         position.put(8, new JLabel("8"));
         position.put(9, new JLabel("9"));
         position.put(10, new JLabel("10"));
-        slider1.setMajorTickSpacing(1);
-        slider1.setPaintTicks(true);
-        slider1.setLabelTable(position);
-        slider1.setPaintLabels(true);
-        JLabel slider1label = new JLabel("5");
+        intSlider.setMajorTickSpacing(1);
+        intSlider.setPaintTicks(true);
+        intSlider.setLabelTable(position);
+        intSlider.setPaintLabels(true);
+        JLabel intSliderLabel = new JLabel("5");
 
         //set strength
         JLabel strength = new JLabel("Strength");
-        JSlider slider2 = new JSlider(0,10,5);
-        slider2.setMajorTickSpacing(1);
-        slider2.setPaintTicks(true);
-        slider2.setLabelTable(position);
-        slider2.setPaintLabels(true);
-        JLabel slider2label = new JLabel("5");
+        JSlider strSlider = new JSlider(0,10,5);
+        strSlider.setMajorTickSpacing(1);
+        strSlider.setPaintTicks(true);
+        strSlider.setLabelTable(position);
+        strSlider.setPaintLabels(true);
+        JLabel strSliderLabel = new JLabel("5");
 
         //set sociability
         JLabel sociability = new JLabel("Sociability");
-        JSlider slider3 = new JSlider(0,10,5);
-        slider3.setMajorTickSpacing(1);
-        slider3.setPaintTicks(true);
-        slider3.setLabelTable(position);
-        slider3.setPaintLabels(true);
-        JLabel slider3label = new JLabel("5");
+        JSlider socSlider = new JSlider(0,10,5);
+        socSlider.setMajorTickSpacing(1);
+        socSlider.setPaintTicks(true);
+        socSlider.setLabelTable(position);
+        socSlider.setPaintLabels(true);
+        JLabel socSliderLabel = new JLabel("5");
 
         //set empathy
         JLabel empathy = new JLabel("Empathy");
-        JSlider slider4 = new JSlider(0,10,5);
-        slider4.setMajorTickSpacing(1);
-        slider4.setPaintTicks(true);
-        slider4.setLabelTable(position);
-        slider4.setPaintLabels(true);
-        JLabel slider4label = new JLabel("5");
+        JSlider empSlider = new JSlider(0,10,5);
+        empSlider.setMajorTickSpacing(1);
+        empSlider.setPaintTicks(true);
+        empSlider.setLabelTable(position);
+        empSlider.setPaintLabels(true);
+        JLabel empSliderLabel = new JLabel("5");
 
         //set relationships
         JLabel relationships = new JLabel("Relationships");
@@ -186,17 +189,17 @@ public class DeathGameView {
         secondPanel.add(name);
         secondPanel.add(enterName);
         secondPanel.add(intelligence);
-        secondPanel.add(slider1);
-        secondPanel.add(slider1label);
+        secondPanel.add(intSlider);
+        secondPanel.add(intSliderLabel);
         secondPanel.add(strength);
-        secondPanel.add(slider2);
-        secondPanel.add(slider2label);
+        secondPanel.add(strSlider);
+        secondPanel.add(strSliderLabel);
         secondPanel.add(sociability);
-        secondPanel.add(slider3);
-        secondPanel.add(slider3label);
+        secondPanel.add(socSlider);
+        secondPanel.add(socSliderLabel);
         secondPanel.add(empathy);
-        secondPanel.add(slider4);
-        secondPanel.add(slider4label);
+        secondPanel.add(empSlider);
+        secondPanel.add(empSliderLabel);
         secondPanel.add(relationships);
         secondPanel.add(enterRelationships);
         secondPanel.add(createParticipant);
@@ -205,40 +208,40 @@ public class DeathGameView {
         name.setBounds(50,50,200,50);
         enterName.setBounds(300,50,200,50);
         intelligence.setBounds(50,150,200,50);
-        slider1.setBounds(150,150,500,50);
-        slider1label.setBounds(700,150,50,50);
+        intSlider.setBounds(150,150,500,50);
+        intSliderLabel.setBounds(700,150,50,50);
         strength.setBounds(50,250,200,50);
-        slider2.setBounds(150,250,500,50);
-        slider2label.setBounds(700,250,50,50);
+        strSlider.setBounds(150,250,500,50);
+        strSliderLabel.setBounds(700,250,50,50);
         sociability.setBounds(50,350,200,50);
-        slider3.setBounds(150,350,500,50);
-        slider3label.setBounds(700,350,50,50);
+        socSlider.setBounds(150,350,500,50);
+        socSliderLabel.setBounds(700,350,50,50);
         empathy.setBounds(50,450,200,50);
-        slider4.setBounds(150,450,500,50);
-        slider4label.setBounds(700,450,50,50);
+        empSlider.setBounds(150,450,500,50);
+        empSliderLabel.setBounds(700,450,50,50);
         relationships.setBounds(50,550,200,50);
         enterRelationships.setBounds(50,600,200,50);
         createParticipant.setBounds(450,525,200,200);
 
         //logic for changing sliders
-        slider1.addChangeListener(new ChangeListener() {
+        intSlider.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-                slider1label.setText("" + ((JSlider)e.getSource()).getValue());
+                intSliderLabel.setText("" + ((JSlider)e.getSource()).getValue());
             }
         });
-        slider2.addChangeListener(new ChangeListener() {
+        strSlider.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-                slider2label.setText("" + ((JSlider)e.getSource()).getValue());
+                strSliderLabel.setText("" + ((JSlider)e.getSource()).getValue());
             }
         });
-        slider3.addChangeListener(new ChangeListener() {
+        socSlider.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-                slider3label.setText("" + ((JSlider)e.getSource()).getValue());
+                socSliderLabel.setText("" + ((JSlider)e.getSource()).getValue());
             }
         });
-        slider4.addChangeListener(new ChangeListener() {
+        empSlider.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-                slider4label.setText("" + ((JSlider)e.getSource()).getValue());
+                empSliderLabel.setText("" + ((JSlider)e.getSource()).getValue());
             }
         });
 
