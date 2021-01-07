@@ -59,11 +59,14 @@ public class DoublePendulumView {
 
         pendulum1Settings.put("mass", 1.0);
         pendulum1Settings.put("length", 1.0);
+        pendulum1Settings.put("acceleration", 1.0);
+
 
 
 
         pendulum2Settings.put("mass", 1.0);
         pendulum2Settings.put("length", 1.0);
+        pendulum2Settings.put("acceleration", 1.0);
 
         simulationSettings.put("gravity", 9.80);
 
