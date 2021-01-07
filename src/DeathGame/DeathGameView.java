@@ -14,7 +14,8 @@ import java.util.*;
 
 
 public class DeathGameView {
-    
+    //logic variables
+    ArrayList<Participant> ps = new ArrayList<Participant>();
 
     //JPanel variables
     public JButton participant1;
@@ -28,6 +29,7 @@ public class DeathGameView {
         initialize.RunDeathGameView();
     }
     public void RunDeathGameView() {
+
         //initialize variables
         JFrame frame = new JFrame();
         JPanel startPanel = new JPanel();
@@ -35,18 +37,6 @@ public class DeathGameView {
         JButton participant2 = new JButton("Participant 2");
         JButton participant3 = new JButton("Participant 3");
         JButton startSimulation = new JButton("Start Simulation");
-        int p1intel;
-        int p1str;
-        int p1soc;
-        int p1emp;
-        int p2intel;
-        int p2str;
-        int p2soc;
-        int p2emp;
-        int p3intel;
-        int p3str;
-        int p3soc;
-        int p3emp;
 
 
         //JScrollPane Scroller = new JScrollPane(startPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -244,7 +234,12 @@ public class DeathGameView {
                 empSliderLabel.setText("" + ((JSlider)e.getSource()).getValue());
             }
         });
-
+        createParticipant.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ps.add(new Participant(Integer.parseInt(intSliderLabel.getText()), Integer.parseInt(strSliderLabel.getText()), Integer.parseInt(socSliderLabel.getText()), Integer.parseInt(empSliderLabel.getText()), new Hashtable<Participant, Integer>(), enterName.getText() ))
+            }
+        });
     }
 
 }
