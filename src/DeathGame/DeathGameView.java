@@ -251,16 +251,17 @@ public class DeathGameView {
                 empSliderLabel.setText("" + ((JSlider)e.getSource()).getValue());
             }
         });
-        /*createParticipant.addActionListener(new ActionListener() {
+        createParticipant.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (i == NEW) {
+                /*if (i == NEW) {
                     ps.add(new Participant(Integer.parseInt(intSliderLabel.getText()), Integer.parseInt(strSliderLabel.getText()), Integer.parseInt(socSliderLabel.getText()), Integer.parseInt(empSliderLabel.getText()), new Hashtable<Participant, Integer>(), enterName.getText()));
                 } else {
                     ps.set(i, new Participant(Integer.parseInt(intSliderLabel.getText()), Integer.parseInt(strSliderLabel.getText()), Integer.parseInt(socSliderLabel.getText()), Integer.parseInt(empSliderLabel.getText()), new Hashtable<Participant, Integer>(), enterName.getText()));
-                }
+                }*/
+                frame2.dispose();
             }
-        });*/
+        });
     }
 
 }
