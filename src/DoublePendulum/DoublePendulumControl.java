@@ -23,7 +23,7 @@ public class DoublePendulumControl {
     }
 
     public static void calculateFrame(HashMap<String, Double> pendulum1Settings, HashMap<String, Double> pendulum2Settings, HashMap<String, Double> simSettings){
-        double g = simSettings.get("gravity");
+        double g = simSettings.get("gravity")/9.8;
         double l1 = pendulum1Settings.get("length"); // length of first pendulum
         double l2 = pendulum2Settings.get("length"); // length of second pendulum
         double m1 = pendulum1Settings.get("mass"); //  mass of first pendulum excluding weight of string
