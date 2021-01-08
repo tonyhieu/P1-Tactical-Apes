@@ -40,14 +40,14 @@ public class DoublePendulumControl {
         double num3 = -2*Math.sin(t1-t2)*m2;
         double num4 = a2_v*a2_v*l2+a1_v*a1_v*l1*Math.cos(t1-t2);
         double den = l1 * (2*m1+m2-m2*Math.cos(2*t1-2*t2));
-        double a1_a = (num1 + num2 + num3*num4) / den;
+        double a1_a = (num1 + num2 + num3*num4) / den; //Split up the fraction into different parts
 
         num1 = 2 * Math.sin(t1-t2);
         num2 = (a1_v*a1_v*l1*(m1+m2));
         num3 = g * (m1 + m2) * Math.cos(t1);
         num4 = a2_v*a2_v*l2*m2*Math.cos(t1-t2);
         den = l2 * (2*m1+m2-m2*Math.cos(2*t1-2*t2));
-        double a2_a = (num1*(num2+num3+num4)) / den;
+        double a2_a = (num1*(num2+num3+num4)) / den; //Split up the fraction into different parts
 
         //Need to update values and and update the hash map with the calculated values
 
