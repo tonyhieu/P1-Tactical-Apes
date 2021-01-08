@@ -24,14 +24,32 @@ public class DoublePendulumControl {
 
     public static void calculateFrame(HashMap<String, Double> pendulum1Settings, HashMap<String, Double> pendulum2Settings, HashMap<String, Double> simSettings){
         double g = simSettings.get("gravity");
+        double l1 = pendulum1Settings.get("length"); // length of first pendulum
+        double l2 = pendulum2Settings.get("length"); // length of second pendulum
+        double m1 = pendulum1Settings.get("mass"); //  mass of first pendulum excluding weight of string
+        double m2 = pendulum2Settings.get("mass"); // mass of second pendulum excluding weight of string
+        double t1 = pendulum1Settings.get("angle");// angle formed by first pendulum and normal - angle1
+        double t2 = pendulum2Settings.get("angle"); //angle formed by second pendulum and normal - angle2
+        double a1_v = pendulum1Settings.get("velocity"); //angular velocity of pendulum1
+        double a2_v = pendulum2Settings.get("velocity"); //angular velocity of pendulum2
 
-        //double num1 = -g * (2 * m1 + m2) * sin(a1);
-        //double num2 = -m2 * g * sin(a1-2*a2);
-        //double num3 = -2*sin(a1-a2)*m2;
-        //double num4 = a2_v*a2_v*r2+a1_v*a1_v*r1*cos(a1-a2);
-        //double den = r1 * (2*m1+m2-m2*cos(2*a1-2*a2));
-        //double a1_a = (num1 + num2 + num3*num4) / den;
 
+
+        double num1 = -g * (2 * m1 + m2) * Math.sin(t1);
+        double num2 = -m2 * g * Math.sin(t1-2*t2);
+        double num3 = -2*Math.sin(t1-t2)*m2;
+        double num4 = a2_v*a2_v*l2+a1_v*a1_v*l1*Math.cos(t1-t2);
+        double den = l1 * (2*m1+m2-m2*Math.cos(2*t1-2*t2));
+        double a1_a = (num1 + num2 + num3*num4) / den;
+
+        num1 = 2 * Math.sin(t1-t2);
+        num2 = (a1_v*a1_v*l1*(m1+m2));
+        num3 = g * (m1 + m2) * Math.cos(t1);
+        num4 = a2_v*a2_v*l2*m2*Math.cos(t1-t2);
+        den = l2 * (2*m1+m2-m2*Math.cos(2*t1-2*t2));
+        double a2_a = (num1*(num2+num3+num4)) / den;
+
+        //Need to update values and and update the hash map with the calculated values
 
     }
 
