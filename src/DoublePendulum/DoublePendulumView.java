@@ -10,6 +10,7 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.lang.*;
 import java.util.HashMap;
+import java.lang.Math;
 
 public class DoublePendulumView {
 
@@ -59,14 +60,20 @@ public class DoublePendulumView {
 
         pendulum1Settings.put("mass", 1.0);
         pendulum1Settings.put("length", 1.0);
-        pendulum1Settings.put("acceleration", 1.0);
+        pendulum1Settings.put("acceleration", 0.0);
+        pendulum1Settings.put("angle", Math.PI/2);
+        pendulum1Settings.put("velocity", 0.0);
+
 
 
 
 
         pendulum2Settings.put("mass", 1.0);
         pendulum2Settings.put("length", 1.0);
-        pendulum2Settings.put("acceleration", 1.0);
+        pendulum2Settings.put("acceleration", 0.0);
+        pendulum2Settings.put("angle", Math.PI/2);
+        pendulum2Settings.put("velocity", 0.0);
+
 
         simulationSettings.put("gravity", 9.80);
 
