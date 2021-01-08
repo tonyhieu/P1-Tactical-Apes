@@ -1,6 +1,6 @@
 package DeathGame;
 import java.util.*;
-
+/*
 public class Participant {
 
     //values for various relationships
@@ -28,3 +28,4 @@ public class Participant {
     }
 
 }
+*/
