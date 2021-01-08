@@ -1,4 +1,4 @@
-//import DeathGame.*;
+import DeathGame.*;
 import DoublePendulum.*;
 import SinglePendulum.*;
 import SinglePendulum.SinglePendulumControl;
@@ -44,13 +44,13 @@ public class Main {
         singlePendulum.setBounds(100,600,250,100);
 
         //button logic
-        /*deathGame.addActionListener(new ActionListener() {
+        deathGame.addActionListener(new ActionListener() {
            @Override
             public void actionPerformed(ActionEvent e) {
                 DeathGameView deathgameview = new DeathGameView();
                 deathgameview.RunDeathGameView();
             }
-        });*/
+        });
         doublePendulum.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
