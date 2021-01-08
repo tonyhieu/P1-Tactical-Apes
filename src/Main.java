@@ -1,6 +1,7 @@
-import DeathGame.*;
+//import DeathGame.*;
 import DoublePendulum.*;
 import SinglePendulum.*;
+import SinglePendulum.SinglePendulumControl;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
@@ -43,13 +44,13 @@ public class Main {
         singlePendulum.setBounds(100,600,250,100);
 
         //button logic
-        deathGame.addActionListener(new ActionListener() {
-            @Override
+        /*deathGame.addActionListener(new ActionListener() {
+           @Override
             public void actionPerformed(ActionEvent e) {
                 DeathGameView deathgameview = new DeathGameView();
                 deathgameview.RunDeathGameView();
             }
-        });
+        });*/
         doublePendulum.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,8 +62,8 @@ public class Main {
         singlePendulum.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SinglePendulumMain singlePendulumMain = new SinglePendulumMain();
-
+                SinglePendulumMain singlePendulumMain;
+                singlePendulumMain = new SinglePendulumMain();
             }
         });
 

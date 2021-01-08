@@ -5,9 +5,11 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 
-public class PendulumDisplay extends JPanel implements Runnable {
+public class PendulumDisplay extends JFrame implements Runnable {
 
     SinglePendulumModel model;
+
+    private JPanel panel;
 
 
     private final int D_WIDTH = 400;
@@ -25,14 +27,18 @@ public class PendulumDisplay extends JPanel implements Runnable {
     public PendulumDisplay(SinglePendulumModel model) {
         this.model = model;
 
+        this.bobX = (int) (origin.getX() + model.bobX);
+        this.bobY = (int) (origin.getY() + model.bobY);
+
+
         initDisplay();
     }
     public void initDisplay() {
-        this.bobX = (int) (origin.getX() + model.bobPos.getX());
-        this.bobY = (int) (origin.getY() + model.bobPos.getY());
 
-        setBackground(Color.WHITE);
-        setPreferredSize(new Dimension(D_WIDTH, D_HEIGHT));
+
+        panel.setBackground(Color.WHITE);
+        panel.setPreferredSize(new Dimension(D_WIDTH, D_HEIGHT));
+        setVisible(true);
 
 
     }
@@ -45,22 +51,33 @@ public class PendulumDisplay extends JPanel implements Runnable {
 
     }
 
-    @Override
-    public void paintComponent(Graphics g) {
+    /*@Override
+    private void paintComponent(Graphics g) {
         super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(3));
+        drawPendulum(g2);
 
-        drawPendulum(g);
-    }
+
+    }*/
 
     private void drawPendulum(Graphics g) {
+        System.out.println(origin.getX());
         g.drawLine((int)origin.getX(), (int) origin.getY(),bobX, bobY);
+
+
+        //pendulum bob
         g.drawOval(bobX,bobY,10,10);
     }
 
     private void cycle() {
         model.update();
-        bobX = (int) (origin.getX() + model.bobPos.getX());
-        bobY = (int) (origin.getY() + model.bobPos.getY());
+        bobX = (int) (origin.getX() + model.bobX);
+        bobY = (int) (origin.getY() + model.bobX);
+
+        //System.out.println("("+bobX+","+bobY);
+        //System.out.println(model.bobX);
+        //System.out.println(model.bobY);
     }
 
 

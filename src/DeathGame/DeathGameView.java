@@ -15,7 +15,7 @@ import java.util.*;
 
 public class DeathGameView {
     //logic variables
-    ArrayList<Participant> ps = new ArrayList<Participant>();
+    //ArrayList<Participant> ps = new ArrayList<Participant>();
 
     //JPanel variables
     public JButton participant1;
@@ -234,12 +234,12 @@ public class DeathGameView {
                 empSliderLabel.setText("" + ((JSlider)e.getSource()).getValue());
             }
         });
-        createParticipant.addActionListener(new ActionListener() {
+        /*createParticipant.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ps.add(new Participant(Integer.parseInt(intSliderLabel.getText()), Integer.parseInt(strSliderLabel.getText()), Integer.parseInt(socSliderLabel.getText()), Integer.parseInt(empSliderLabel.getText()), new Hashtable<Participant, Integer>(), enterName.getText() ))
+                ps.add(new Participant(Integer.parseInt(intSliderLabel.getText()), Integer.parseInt(strSliderLabel.getText()), Integer.parseInt(socSliderLabel.getText()), Integer.parseInt(empSliderLabel.getText()), new Hashtable<Participant, Integer>(), enterName.getText() ));
             }
-        });
+        });*/
     }
 
 }

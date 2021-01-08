@@ -20,10 +20,13 @@ public class SinglePendulumModel {
     double aVel;
     double a;
     Point2D origin = new Point2D.Double(0.0,0.0);
-    Point2D bobPos;
+    //Point2D bobPos;
+    double bobX;
+    double bobY;
 
     public SinglePendulumModel(SinglePendulumView view) {
-        new SinglePendulumModel(view,0.0,5.0,50,0,0,0,9.8);
+
+        new SinglePendulumModel(view,30,5.0,50,0,0,0,9.8);
     }
 
     public SinglePendulumModel(SinglePendulumView view,double a, double bobMass,double rodLength,double rodMass,double pivotFriction, double airResistance, double g) {
@@ -40,7 +43,12 @@ public class SinglePendulumModel {
         this.airResistance = airResistance;
         this.g = g;
 
-        this.bobPos = new Point2D.Double(rodLength*Math.sin(this.a), rodLength*Math.cos(this.a));
+        this.bobX = 10*rodLength*Math.sin(this.a);
+        this.bobY = 10*rodLength*Math.cos(this.a);
+
+        System.out.println(bobX+","+bobY);
+
+
 
 
     }
@@ -49,12 +57,8 @@ public class SinglePendulumModel {
         aAcc = (g/(rodLength/10))*Math.sin(aRad);
         aVel += aAcc;
         a += aVel;
-        this.bobPos.setLocation(rodLength*Math.sin(a), rodLength*Math.cos(a));
+        bobX = Math.sin(a)*rodLength;
+        bobY = Math.cos(a)*rodLength;
 
     }
-
-    public static void main(String[] args) {
-
-    }
-
 }
