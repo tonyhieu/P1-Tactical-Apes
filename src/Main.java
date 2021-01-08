@@ -7,6 +7,8 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Main {
+
+
     public static void main (String[] args) {
         //Initialize menu objects
         JFrame menuFrame = new JFrame();
@@ -14,6 +16,8 @@ public class Main {
         JLabel welcomeLabel = new JLabel("Tactical Apes Simulations");
         JButton deathGame = new JButton("Death Game Simulation");
         JButton doublePendulum = new JButton("Double Pendulum Simulation");
+
+
 
         //frame settings
         menuFrame.setSize(500, 500);
