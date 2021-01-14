@@ -11,12 +11,13 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.lang.*;
 import java.util.*;
+import DeathGame.Participant;
 
 
 public class DeathGameView {
     //logic variables
     public final int NEW = -1;
-    public ArrayList<Participant> ps = new ArrayList<Participant>();
+    public static ArrayList<Participant> ps = new ArrayList<Participant>();
 
     //JPanel variables
     public JButton participant1;
@@ -41,7 +42,6 @@ public class DeathGameView {
         JButton participant3 = new JButton("Participant 3");
         ps.add(new Participant(0, 0, 0, 0, new Hashtable<Participant, Integer>(), "Participant 3"));
         JButton startSimulation = new JButton("Start Simulation");
-        System.out.println(ps.size());
 
         //JScrollPane Scroller = new JScrollPane(startPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         //Scroller.setEnabled(true);
@@ -98,7 +98,6 @@ public class DeathGameView {
                 secondview.SecondView(2);
             }
         });
-        System.out.println(ps.size());
         /*startSimulation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -118,8 +117,9 @@ public class DeathGameView {
 
         //set name
         JLabel name = new JLabel("Name");
-        JTextField enterName = new JTextField("Enter Name");
-        //JTextField enterName = new JTextField(ps.get(i).name);
+        //JTextField enterName = new JTextField("Enter Name");
+        //changes name to past name
+        JTextField enterName = new JTextField(ps.get(i).name);
 
         //set intelligence and initialize hashtable
         JLabel intelligence = new JLabel("Intelligence");
@@ -169,12 +169,17 @@ public class DeathGameView {
         empSlider.setPaintLabels(true);
         JLabel empSliderLabel = new JLabel("5");
 
-        /*if (i != NEW) {
+        //changes values of sliders according to preexisting values
+        if (i != NEW) {
             intSlider.setValue(ps.get(i).intel);
+            intSliderLabel.setText(Integer.toString(ps.get(i).intel));
             strSlider.setValue(ps.get(i).str);
+            strSliderLabel.setText(Integer.toString(ps.get(i).str));
             socSlider.setValue(ps.get(i).soc);
+            socSliderLabel.setText(Integer.toString(ps.get(i).soc));
             empSlider.setValue(ps.get(i).emp);
-        }*/
+            empSliderLabel.setText(Integer.toString(ps.get(i).emp));
+        }
 
 
         //set relationships
@@ -254,11 +259,11 @@ public class DeathGameView {
         createParticipant.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*if (i == NEW) {
+                if (i == NEW) {
                     ps.add(new Participant(Integer.parseInt(intSliderLabel.getText()), Integer.parseInt(strSliderLabel.getText()), Integer.parseInt(socSliderLabel.getText()), Integer.parseInt(empSliderLabel.getText()), new Hashtable<Participant, Integer>(), enterName.getText()));
                 } else {
                     ps.set(i, new Participant(Integer.parseInt(intSliderLabel.getText()), Integer.parseInt(strSliderLabel.getText()), Integer.parseInt(socSliderLabel.getText()), Integer.parseInt(empSliderLabel.getText()), new Hashtable<Participant, Integer>(), enterName.getText()));
-                }*/
+                }
                 frame2.dispose();
             }
         });
