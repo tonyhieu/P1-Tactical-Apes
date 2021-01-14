@@ -17,6 +17,8 @@ import DeathGame.Participant;
 public class DeathGameView {
     //logic variables
     public final int NEW = -1;
+    public final int BHEIGHT = 100;
+    public final int BWIDTH = 800;
     public static ArrayList<Participant> ps = new ArrayList<Participant>();
 
     //JPanel variables
