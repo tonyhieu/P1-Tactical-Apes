@@ -51,6 +51,15 @@ public class DoublePendulumControl {
 
         //Need to update values and and update the hash map with the calculated values
 
+        a1_v += a1_a;
+        a2_v += a2_a;
+        t1 += a1_v;
+        t2 += a2_v;
+
+        pendulum1Settings.put("angle", t1);// angle formed by first pendulum and normal - angle1
+        pendulum2Settings.put("angle", t2); //angle formed by second pendulum and normal - angle2
+        pendulum1Settings.put("velocity", a1_v);; //angular velocity of pendulum1
+        pendulum1Settings.put("velocity", a2_v); //angular velocity of pendulum2
     }
 
 
