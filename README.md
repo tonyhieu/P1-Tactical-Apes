@@ -5,11 +5,11 @@
 - [Contributers](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#contributers)
 - [Database](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#database)
 - [Simulations](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#simulations)
-- [Scrum Board](https://github.com/tonyhieu/P1-Tactical-Apes/projects)
+- [Scrum Board](https://github.com/tonyhieu/P1-Tactical-Apes/projects) (The goals completed are specified in here)
 
 ## About
 Our project will be a series of different simulations which put data into a database. Some of our ideas for simulations are:
-- [ ] Physics Pendulum
+- [ ] Physics Pendulum (both single and double pendulum systems)
 - [ ] Survival Game (akin to things like Kimi ga Shine or Danganronpa)
 
 ## Contributors
