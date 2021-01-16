@@ -72,6 +72,8 @@ Scrum Master Grade: (19/20) Our Individual Tickets are listed in the table below
 - Have the algorithms for the simulations coded
 - Have the code for each simulation seperated into MVC
 
+[Here](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/runcode.md) is a link to the document that specifies how to run our code.
+
 | Person | Goals Completed/Accomplishments | Evidence |
 | --- | --- | --- |
 | Vihan Jayaraman |  |
