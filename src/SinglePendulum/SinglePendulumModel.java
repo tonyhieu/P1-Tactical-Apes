@@ -1,5 +1,6 @@
 package SinglePendulum;
 
+import javax.swing.*;
 import java.lang.Math;
 
 import java.awt.geom.Point2D;
@@ -19,7 +20,7 @@ public class SinglePendulumModel {
     double aAcc;
     double aVel;
     double a;
-    Point2D origin = new Point2D.Double(0.0,0.0);
+
     //Point2D bobPos;
     double bobX;
     double bobY;
@@ -46,19 +47,41 @@ public class SinglePendulumModel {
         this.bobX = 10*rodLength*Math.sin(this.a);
         this.bobY = 10*rodLength*Math.cos(this.a);
 
-        System.out.println(bobX+","+bobY);
+
+
+        //System.out.println(bobX+","+bobY);
 
 
 
 
     }
     public void update() {
-        double aRad = Math.toRadians(a);
-        aAcc = (g/(rodLength/10))*Math.sin(aRad);
-        aVel += aAcc;
-        a += aVel;
-        bobX = Math.sin(a)*rodLength;
-        bobY = Math.cos(a)*rodLength;
+
+
+
+
+
+        try {
+            aAcc = (g/(rodLength/10))*Math.sin(a);
+            Thread.sleep(3);
+            aVel += aAcc;
+            Thread.sleep(3);
+            a += aVel;
+            Thread.sleep(3);
+
+            bobX = Math.sin(a) * rodLength;
+            bobY = Math.cos(a) * rodLength;
+
+        } catch (InterruptedException e) {
+            String msg = String.format("Thread interrupted: %s", e.getMessage());
+
+            JOptionPane.showMessageDialog(this.view.frame, msg, "Error",
+                    JOptionPane.ERROR_MESSAGE);
+
+
+
+        }
+
 
     }
 }

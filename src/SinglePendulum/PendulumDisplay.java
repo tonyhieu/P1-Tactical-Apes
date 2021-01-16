@@ -3,6 +3,7 @@ package SinglePendulum;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.lang.Math;
 
 
 public class PendulumDisplay extends JPanel implements Runnable {
@@ -14,111 +15,68 @@ public class PendulumDisplay extends JPanel implements Runnable {
     private final int D_WIDTH = 400;
     private final int D_HEIGHT = 400;
 
+    int anchorX;
+    int anchorY;
 
+    int bobX;
+    int bobY;
 
-    private Thread animator;
+    double rodLength;
+    double g;
 
-
-
-    private final int DELAY = 5;
+    double a;
+    double aVel;
+    double aAcc;
 
     public PendulumDisplay(SinglePendulumModel model) {
         this.model = model;
-
-
-
-
-        initDisplay();
-    }
-    public void initDisplay() {
-
-
-        setBackground(Color.WHITE);
-        setPreferredSize(new Dimension(D_WIDTH, D_HEIGHT));
-        setVisible(true);
-
-
-    }
-    @Override
-    public void addNotify() {
-        super.addNotify();
-
-        animator = new Thread(this);
-        animator.start();
-
+        setDoubleBuffered(true);
     }
 
     @Override
     public void paint(Graphics g) {
-        super.paint(g);
+        //draws background
         g.setColor(Color.WHITE);
+        g.fillRect(0, 0, getWidth(), getHeight());
 
-        int anchorX = getWidth()/2;
-        int anchorY = getHeight()/4;
-        int bobX = (int) (anchorX + model.bobX);
-        int bobY = (int) (anchorY + model.bobY);
+        //defines location variables for ball and arm
+        anchorX = getWidth() / 2;
+        anchorY = getHeight() / 4;
+        bobX = anchorX + (int) (Math.sin(a) * rodLength);
+        bobY = anchorY + (int) (Math.cos(a) * rodLength);
 
-        System.out.println(" "+anchorX+","+anchorY);
-
+        //draws ball and arm
         g.setColor(Color.BLACK);
-        g.drawLine(anchorX,anchorY, bobX,bobY);
-
-
-
-
-
-
-        //drawPendulum(g);
-
-
+        g.drawLine(anchorX, anchorY, bobX, bobY);
+        g.fillOval(anchorX - 3, anchorY - 4, 7, 7);
+        g.fillOval(bobX - 7, bobY - 7, 14, 14);
     }
 
-    /*private void drawPendulum(Graphics g) {
-        System.out.println(origin.getX());
-        g.drawLine((int)origin.getX(), (int) origin.getY(),bobX, bobY);
-
-
-        //pendulum bob
-        g.drawOval(bobX,bobY,10,10);
-    }*/
-
-    private void cycle() {
-        model.update();
-
-        //System.out.println("("+bobX+","+bobY);
-        //System.out.println(model.bobX);
-        //System.out.println(model.bobY);
-    }
-
-
-    @Override
     public void run() {
-        long beforeTime,timeDiff, sleep;
-
-        beforeTime = System.currentTimeMillis();
 
         while (true) {
-            cycle();
+
+            aAcc = -9.81 / rodLength * Math.sin(a);
+            aVel += aAcc;
+            a += aVel;
             repaint();
-
-            timeDiff = System.currentTimeMillis() - beforeTime;
-            sleep = DELAY-timeDiff;
-
-            if (sleep <0 ) {
-                sleep = 2;
-            }
-
-            try {
-                Thread.sleep(sleep);
-
-            } catch (InterruptedException e) {
-                String msg = String.format("Thread interrupted: %s", e.getMessage());
-
-                JOptionPane.showMessageDialog(this, msg, "Error",
-                        JOptionPane.ERROR_MESSAGE);
-            }
-
-            beforeTime = System.currentTimeMillis();
+            //frame refresh rate
+            try { Thread.sleep(15); } catch (InterruptedException ex) {}
         }
     }
+
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension((int) (2 * rodLength + 50), (int) rodLength / 2 * 3);
+    }
+
+    /*public static void main(String[] args) {
+        JFrame f = new JFrame("Pendulum");
+        Pendulum p = new Pendulum(200);
+        f.add(p);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.pack();
+        f.setVisible(true);
+        new Thread(p).start();
+    }*/
 }
