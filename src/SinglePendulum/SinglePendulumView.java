@@ -61,8 +61,8 @@ public class SinglePendulumView {
     }
 
     public void startSimulation() {
-        JFrame f = new JFrame("Pendulum");
-        Pendulum p = new Pendulum(200);
+        JFrame f = new JFrame("PendulumDisplay");
+        PendulumDisplay p = new PendulumDisplay(model);
         f.add(p);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.pack();

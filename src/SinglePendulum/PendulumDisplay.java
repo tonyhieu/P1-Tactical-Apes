@@ -10,21 +10,16 @@ public class PendulumDisplay extends JPanel implements Runnable {
 
     SinglePendulumModel model;
 
-
-
-    private final int D_WIDTH = 400;
-    private final int D_HEIGHT = 400;
-
     int anchorX;
     int anchorY;
 
     int bobX;
     int bobY;
 
-    double rodLength;
+    double rodLength = 100;
     double g;
 
-    double a;
+    double a = 30;
     double aVel;
     double aAcc;
 
@@ -35,17 +30,20 @@ public class PendulumDisplay extends JPanel implements Runnable {
 
     @Override
     public void paint(Graphics g) {
-        //draws background
+        //draw background
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, getWidth(), getHeight());
 
-        //defines location variables for ball and arm
+
+
         anchorX = getWidth() / 2;
         anchorY = getHeight() / 4;
+
+
         bobX = anchorX + (int) (Math.sin(a) * rodLength);
         bobY = anchorY + (int) (Math.cos(a) * rodLength);
 
-        //draws ball and arm
+
         g.setColor(Color.BLACK);
         g.drawLine(anchorX, anchorY, bobX, bobY);
         g.fillOval(anchorX - 3, anchorY - 4, 7, 7);
@@ -59,8 +57,8 @@ public class PendulumDisplay extends JPanel implements Runnable {
             aAcc = -9.81 / rodLength * Math.sin(a);
             aVel += aAcc;
             a += aVel;
+            //System.out.println(a);
             repaint();
-            //frame refresh rate
             try { Thread.sleep(15); } catch (InterruptedException ex) {}
         }
     }
@@ -71,8 +69,8 @@ public class PendulumDisplay extends JPanel implements Runnable {
     }
 
     /*public static void main(String[] args) {
-        JFrame f = new JFrame("Pendulum");
-        Pendulum p = new Pendulum(200);
+        JFrame f = new JFrame("PendulumDisplay");
+        PendulumDisplay p = new PendulumDisplay(model);
         f.add(p);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.pack();

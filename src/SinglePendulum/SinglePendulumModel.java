@@ -27,7 +27,7 @@ public class SinglePendulumModel {
 
     public SinglePendulumModel(SinglePendulumView view) {
 
-        new SinglePendulumModel(view,30,5.0,50,0,0,0,9.8);
+        new SinglePendulumModel(view,30,5.0,100,0,0,0,9.8);
     }
 
     public SinglePendulumModel(SinglePendulumView view,double a, double bobMass,double rodLength,double rodMass,double pivotFriction, double airResistance, double g) {
@@ -42,46 +42,16 @@ public class SinglePendulumModel {
         this.pivotFriction = pivotFriction;
 
         this.airResistance = airResistance;
-        this.g = g;
+        this.g = -g;
 
-        this.bobX = 10*rodLength*Math.sin(this.a);
-        this.bobY = 10*rodLength*Math.cos(this.a);
+        this.bobX = rodLength*Math.sin(this.a);
+        this.bobY = rodLength*Math.cos(this.a);
 
-
-
-        //System.out.println(bobX+","+bobY);
-
-
-
+        System.out.println(this.rodLength);
+        System.out.println(this.a);
 
     }
-    public void update() {
 
 
-
-
-
-        try {
-            aAcc = (g/(rodLength/10))*Math.sin(a);
-            Thread.sleep(3);
-            aVel += aAcc;
-            Thread.sleep(3);
-            a += aVel;
-            Thread.sleep(3);
-
-            bobX = Math.sin(a) * rodLength;
-            bobY = Math.cos(a) * rodLength;
-
-        } catch (InterruptedException e) {
-            String msg = String.format("Thread interrupted: %s", e.getMessage());
-
-            JOptionPane.showMessageDialog(this.view.frame, msg, "Error",
-                    JOptionPane.ERROR_MESSAGE);
-
-
-
-        }
-
-
-    }
 }
+
