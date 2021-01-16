@@ -6,6 +6,7 @@
 - [Database](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#database)
 - [Simulations](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#simulations)
 - [Scrum Board](https://github.com/tonyhieu/P1-Tactical-Apes/projects) (The goals completed are specified in here)
+- [Grading](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#grading)
 
 ## About
 Our project will be a series of different simulations which put data into a database. Some of our ideas for simulations are:
@@ -58,3 +59,11 @@ Fridays: Update Changelog with weekly coding updates. Commit all finished/debugg
 -N@TM: Complete the physics pendulum simulation, show exmple of simultion running and analysis of data. Finish survival game simulation projects with online web support.
 
 -Final: Add and complete additional simulations. Topics will be chosen after current simulations are completed.
+
+## Grading
+| Person | Goals Completed/Accomplishments | Evidence |
+| --- | --- | --- |
+| Vihan Jayaraman |  |
+| Eyaad Mir |  |
+| Yasaswi Singamneni |  |
+| Anthony Vo | Upgraded UI, completed Model portion of Survival Game | [Add Participants Button](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/src/DeathGame/DeathGameView.java#L43), [Saving Participant Data](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/src/DeathGame/DeathGameView.java#L266) |
