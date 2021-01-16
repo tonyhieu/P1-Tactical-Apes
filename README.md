@@ -76,7 +76,7 @@ Scrum Master Grade: (19/20) Our Individual Tickets are listed in the table below
 
 | Person | Goals Completed/Accomplishments | Evidence |
 | --- | --- | --- |
-| Vihan Jayaraman |  |
+| Vihan Jayaraman | Finished single pendulum code, created working simulation | [Ticket](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/src/SinglePendulum/SinglePendulumMain.java) |
 | Eyaad Mir |  |
 | [Yasaswi Singamneni](https://github.com/tonyhieu/P1-Tactical-Apes/projects/3) | Added code to calculate next frame of the Double Pendulum simulation| [Ticket](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/src/DoublePendulum/DoublePendulumControl.java#L25) |
 | Anthony Vo | Upgraded UI, completed Model portion of Survival Game | [Ticket](https://github.com/tonyhieu/P1-Tactical-Apes/projects/1#card-52951565) |
