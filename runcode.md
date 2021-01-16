@@ -25,6 +25,22 @@ At this window, the user can click on the first 3, which would lead them to the 
 
 After editing the settings, the user can click the run simulation button to see the simulation. For debugging purposes, the button currently opens a window that has no simulation, but it will start a simulation once the code is debugged and updated.
 
+## SinglePendulum
+
+To run the Single Pendulum Simulation, first click "Single Pendulum" on the main menu. That should bring the user to the window below.
+
+<p align="center">
+  <img height="500" src="https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/media/SinglePendulumMenu.PNG">
+</p>
+
+Buttons for editing settings are planned to be added. For now, the pendulum is preset to a certain starting angle and rod length. The bob mass is not considered in calculatiosn for now. 
+
+Click the "Start Simulation" to begin the animation, which will look like this:
+<p align="center">
+  <img height="500" src="https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/media/SinglePendulumAnimation.PNG">
+</p>
+
+
 ## Survival Game
 
 After clicking the button called "Death Game Simulation", you'll be taken to a page that looks like this.
