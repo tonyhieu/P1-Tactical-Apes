@@ -61,6 +61,9 @@ Fridays: Update Changelog with weekly coding updates. Commit all finished/debugg
 -Final: Add and complete additional simulations. Topics will be chosen after current simulations are completed.
 
 ## Grading
+
+[Eyaad and Anthony Journal](https://docs.google.com/document/d/1_TAdjjngp_0zO604YmFBRjesVqBiyebn3PxdbbQfVCM/edit?usp=sharing)
+
 | Person | Goals Completed/Accomplishments | Evidence |
 | --- | --- | --- |
 | Vihan Jayaraman |  |
