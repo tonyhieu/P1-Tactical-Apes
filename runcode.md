@@ -11,3 +11,18 @@ Running the main menu allows the user to use a GUI to select which program to ru
 <p align="center">
   <img width="300" height="500" src="https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/media/main.PNG">
 </p>
+
+
+## Double Pendulum
+
+To run the Double Pendulum Simulation, first click Double Pendulum on the main menu. That should bring the user to the window below.
+
+<p align="center">
+  <img height="500" src="https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/media/double.PNG">
+</p>
+
+At this window, the user can click on the first 3, which would lead them to the window below. This window allows the user to change the mass and length of the pendulum. ONce the user is done, they can click set values to save the settings. If the user re opens the window by clicking the same edit settings button again, the previously set settings should still be there.
+
+<p align="center">
+  <img height="500" src="https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/media/doublepen.PNG">
+</p>
