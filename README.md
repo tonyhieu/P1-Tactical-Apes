@@ -5,11 +5,12 @@
 - [Contributers](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#contributers)
 - [Database](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#database)
 - [Simulations](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#simulations)
-- [Scrum Board](https://github.com/tonyhieu/P1-Tactical-Apes/projects)
-
+- [Scrum Board](https://github.com/tonyhieu/P1-Tactical-Apes/projects) (The goals completed are specified in here)
+- [Grading](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/README.md#grading)
+- [Run Code](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/runcode.md) (Document that shows how to run the code)
 ## About
 Our project will be a series of different simulations which put data into a database. Some of our ideas for simulations are:
-- [ ] Physics Pendulum
+- [ ] Physics Pendulum (both single and double pendulum systems)
 - [ ] Survival Game (akin to things like Kimi ga Shine or Danganronpa)
 
 ## Contributors
@@ -58,3 +59,26 @@ Fridays: Update Changelog with weekly coding updates. Commit all finished/debugg
 -N@TM: Complete the physics pendulum simulation, show exmple of simultion running and analysis of data. Finish survival game simulation projects with online web support.
 
 -Final: Add and complete additional simulations. Topics will be chosen after current simulations are completed.
+
+# Grading
+## AP CSA Reflection + FRQ Playground
+[Eyaad and Anthony Journal](https://docs.google.com/document/d/1_TAdjjngp_0zO604YmFBRjesVqBiyebn3PxdbbQfVCM/edit?usp=sharing)
+
+[Vihan and Yasaswi Journal](https://docs.google.com/document/d/1pfqB4SIPHMkJ73QtPpQTaguTV1aGAqH_RgjdxjifUO4/edit?usp=sharing)
+
+## Scrum Team Cards/Tickets
+
+Scrum Master Grade: (19/20) Our Individual Tickets are listed in the table below. Our goals and their current statuses are specified in the [scrum board on the project tab](https://github.com/tonyhieu/P1-Tactical-Apes/projects), but we will provide an overview with our main goals below:
+
+- Created main menu with buttons for all the simulations
+- Have the algorithms for the simulations coded
+- Have the code for each simulation seperated into MVC
+
+[Here](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/runcode.md) is a link to the document that specifies how to run our code.
+
+| Person | Goals Completed/Accomplishments | Evidence |
+| --- | --- | --- |
+| Vihan Jayaraman | Finished animation panel and button to start animation for single pendulum simulation | [Animation](https://github.com/tonyhieu/P1-Tactical-Apes/blob/4589e3c6742e65c2e6849489821be1517fb70aef/src/SinglePendulum/PendulumDisplay.java#L1) [StartButton](https://github.com/tonyhieu/P1-Tactical-Apes/blob/4589e3c6742e65c2e6849489821be1517fb70aef/src/SinglePendulum/SinglePendulumView.java#L54) |
+| Eyaad Mir | Finished death game view and allows users to set attributes with sliders | [Ticket](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/src/DeathGame/DeathGameView.java) |
+| [Yasaswi Singamneni](https://github.com/tonyhieu/P1-Tactical-Apes/projects/3) | Added code to calculate next frame of the Double Pendulum simulation| [Ticket](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/src/DoublePendulum/DoublePendulumControl.java#L25) |
+| Anthony Vo | Upgraded UI, completed Model portion of Survival Game | [Ticket](https://github.com/tonyhieu/P1-Tactical-Apes/projects/1#card-52951565) |

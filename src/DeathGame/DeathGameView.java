@@ -11,17 +11,22 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.lang.*;
 import java.util.*;
+import DeathGame.Participant;
 
 
 public class DeathGameView {
     //logic variables
-    public final int NEW = -1;
-    public ArrayList<Participant> ps = new ArrayList<Participant>();
+    public final int BHEIGHT = 100;
+    public final int BWIDTH = 800;
+    public static ArrayList<Participant> ps = new ArrayList<Participant>();
+    public static int participantNo = 0;
+    public static ArrayList<JButton> buttons = new ArrayList<JButton>();
 
     //JPanel variables
-    public JButton participant1;
+    /*public JButton participant1;
     public JButton participant2;
-    public JButton participant3;
+    public JButton participant3;*/
+    public JButton addParticipant;
     public JButton startSimulation;
     public JScrollPane Scroller;
 
@@ -34,15 +39,8 @@ public class DeathGameView {
         //initialize variables
         JFrame frame = new JFrame();
         JPanel startPanel = new JPanel();
-        JButton participant1 = new JButton("Participant 1");
-        ps.add(new Participant(0, 0, 0, 0, new Hashtable<Participant, Integer>(), "Participant 1"));
-        JButton participant2 = new JButton("Participant 2");
-        ps.add(new Participant(0, 0, 0, 0, new Hashtable<Participant, Integer>(), "Participant 2"));
-        JButton participant3 = new JButton("Participant 3");
-        ps.add(new Participant(0, 0, 0, 0, new Hashtable<Participant, Integer>(), "Participant 3"));
-        JButton newParticipant = new JButton("Add New Participant");
         JButton startSimulation = new JButton("Start Simulation");
-        System.out.println(ps.size());
+        JButton addParticipant = new JButton("Create New Participant (please be patient while the button loads!)");
 
         //JScrollPane Scroller = new JScrollPane(startPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         //Scroller.setEnabled(true);
@@ -64,42 +62,42 @@ public class DeathGameView {
         //Panel adds objects to view
         startPanel.setLayout(null);
         startPanel.setPreferredSize(new Dimension(900,900));
-        startPanel.add(participant1);
-        startPanel.add(participant2);
-        startPanel.add(participant3);
         startPanel.add(startSimulation);
+        startPanel.add(addParticipant);
         //startPanel.add(Scroller);
 
         //Set bounds for buttons
-        participant1.setBounds(50,50,800,100);
-        participant2.setBounds(50,200,800,100);
-        participant3.setBounds(50,350,800,100);
-        startSimulation.setBounds(350,500,200,200);
+        startSimulation.setBounds(50,50,800,100);
+        addParticipant.setBounds(50,200,800,100);
         //Scroller.setBounds(850,0,50,200);
 
         //Logic for buttons pressed
-        participant1.addActionListener(new ActionListener() {
+        addParticipant.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                buttons.add(new JButton("Participant " + (participantNo + 1)));
+                buttons.get(participantNo).setBounds(50, 350 + participantNo*150, 800, 100);
+                startPanel.add(buttons.get(participantNo));
+                ps.add(new Participant(0, 0, 0, 0, new Hashtable<Participant, Integer>(), "Participant " + (participantNo + 1)));
+                buttons.get(participantNo).addActionListener(new ActionListener() {
+                    public final int placeholder = participantNo;
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        DeathGameView editor = new DeathGameView();
+                        editor.SecondView(placeholder);
+                    }
+                });
+                System.out.print(participantNo);
+                participantNo++;
+            }
+        });
+        /*participant1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 DeathGameView secondview = new DeathGameView();
                 secondview.SecondView(0);
             }
-        });
-        participant2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                DeathGameView secondview = new DeathGameView();
-                secondview.SecondView(1);
-            }
-        });
-        participant3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                DeathGameView secondview = new DeathGameView();
-                secondview.SecondView(2);
-            }
-        });
-        System.out.println(ps.size());
+        });;*/
         /*startSimulation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -119,8 +117,9 @@ public class DeathGameView {
 
         //set name
         JLabel name = new JLabel("Name");
-        JTextField enterName = new JTextField("Enter Name");
-        //JTextField enterName = new JTextField(ps.get(i).name);
+        //JTextField enterName = new JTextField("Enter Name");
+        //changes name to past name
+        JTextField enterName = new JTextField(ps.get(i).name);
 
         //set intelligence and initialize hashtable
         JLabel intelligence = new JLabel("Intelligence");
@@ -170,12 +169,15 @@ public class DeathGameView {
         empSlider.setPaintLabels(true);
         JLabel empSliderLabel = new JLabel("5");
 
-        /*if (i != NEW) {
-            intSlider.setValue(ps.get(i).intel);
-            strSlider.setValue(ps.get(i).str);
-            socSlider.setValue(ps.get(i).soc);
-            empSlider.setValue(ps.get(i).emp);
-        }*/
+        //changes values of sliders according to preexisting values
+        intSlider.setValue(ps.get(i).intel);
+        intSliderLabel.setText(Integer.toString(ps.get(i).intel));
+        strSlider.setValue(ps.get(i).str);
+        strSliderLabel.setText(Integer.toString(ps.get(i).str));
+        socSlider.setValue(ps.get(i).soc);
+        socSliderLabel.setText(Integer.toString(ps.get(i).soc));
+        empSlider.setValue(ps.get(i).emp);
+        empSliderLabel.setText(Integer.toString(ps.get(i).emp));
 
 
         //set relationships
@@ -183,7 +185,7 @@ public class DeathGameView {
         JTextField enterRelationships = new JTextField("Enter Relationships");
 
         //button to create participant
-        JButton createParticipant = new JButton("Create Participant");
+        JButton createParticipant = new JButton("Create/Update Participant");
 
 
         //frame settings
@@ -260,38 +262,12 @@ public class DeathGameView {
                 } else {
                     ps.set(i, new Participant(Integer.parseInt(intSliderLabel.getText()), Integer.parseInt(strSliderLabel.getText()), Integer.parseInt(socSliderLabel.getText()), Integer.parseInt(empSliderLabel.getText()), new Hashtable<Participant, Integer>(), enterName.getText()));
                 }*/
+
+                ps.set(i, new Participant(Integer.parseInt(intSliderLabel.getText()), Integer.parseInt(strSliderLabel.getText()), Integer.parseInt(socSliderLabel.getText()), Integer.parseInt(empSliderLabel.getText()), new Hashtable<Participant, Integer>(), enterName.getText()));
+                buttons.get(i).setText(enterName.getText());
                 frame2.dispose();
             }
         });
-    }
-
-}
-
-//temp fix while i try to figure out why these files arent working
-class Participant {
-
-    //values for various relationships
-    public final int STRANGER = 0;
-    public final int FRIEND = 1;
-    public final int CLOSEFRIENDS = 2;
-
-    public int intel;
-    public int str;
-    public int soc;
-    public int emp;
-    public Hashtable<Participant, Integer> relationships = new Hashtable<Participant, Integer>();
-    public String name;
-
-    public float deathChance = 0;
-    public float killChance = 0;
-
-    public Participant (int intel, int str, int soc, int emp, Hashtable<Participant, Integer> relationships, String name) {
-        this.intel = intel;
-        this.str = str;
-        this.soc = soc;
-        this.emp = emp;
-        this.relationships = relationships;
-        this.name = name;
     }
 
 }
