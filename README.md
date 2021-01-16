@@ -66,4 +66,4 @@ Fridays: Update Changelog with weekly coding updates. Commit all finished/debugg
 | Vihan Jayaraman |  |
 | Eyaad Mir |  |
 | Yasaswi Singamneni |  |
-| Anthony Vo | Upgraded UI, completed Model portion of Survival Game | [Add Participants Button](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/src/DeathGame/DeathGameView.java#L43), [Saving Participant Data](https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/src/DeathGame/DeathGameView.java#L266) |
+| Anthony Vo | Upgraded UI, completed Model portion of Survival Game | [Ticket](https://github.com/tonyhieu/P1-Tactical-Apes/projects/1#card-52951565) |
