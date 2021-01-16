@@ -21,8 +21,10 @@ To run the Double Pendulum Simulation, first click Double Pendulum on the main m
   <img height="500" src="https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/media/double.PNG">
 </p>
 
-At this window, the user can click on the first 3, which would lead them to the window below. This window allows the user to change the mass and length of the pendulum. ONce the user is done, they can click set values to save the settings. If the user re opens the window by clicking the same edit settings button again, the previously set settings should still be there.
+At this window, the user can click on the first 3, which would lead them to the window below. This window allows the user to change the mass and length of the pendulum. Once the user is done, they can click set values to save the settings. If the user re opens the window by clicking the same edit settings button again, the previously set settings should still be there.
 
 <p align="center">
   <img height="500" src="https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/media/doublepen.PNG">
 </p>
+
+After editing the settings, the user can click the run simulation button to see the simulation. For debugging purposes, the button currently opens a window that has no simulation, but it will start a simulation once the code is debugged and updated.
