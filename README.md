@@ -60,11 +60,13 @@ Fridays: Update Changelog with weekly coding updates. Commit all finished/debugg
 
 -Final: Add and complete additional simulations. Topics will be chosen after current simulations are completed.
 
-## Grading
-
+# Grading
+## AP CSA Reflection + FRQ Playground
 [Eyaad and Anthony Journal](https://docs.google.com/document/d/1_TAdjjngp_0zO604YmFBRjesVqBiyebn3PxdbbQfVCM/edit?usp=sharing)
 
 [Vihan and Yasaswi Journal](https://docs.google.com/document/d/1pfqB4SIPHMkJ73QtPpQTaguTV1aGAqH_RgjdxjifUO4/edit?usp=sharing)
+
+## Scrum Team Cards/Tickets
 
 Scrum Master Grade: (19/20) Our Individual Tickets are listed in the table below. Our goals and their current statuses are specified in the [scrum board on the project tab](https://github.com/tonyhieu/P1-Tactical-Apes/projects), but we will provide an overview with our main goals below:
 
