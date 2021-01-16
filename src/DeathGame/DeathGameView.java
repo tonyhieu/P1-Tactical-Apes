@@ -41,6 +41,7 @@ public class DeathGameView {
         JPanel startPanel = new JPanel();
         JButton startSimulation = new JButton("Start Simulation");
         JButton addParticipant = new JButton("Create New Participant (please be patient while the button loads!)");
+        JButton listParticipant = new JButton("List Participants");
 
         //JScrollPane Scroller = new JScrollPane(startPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         //Scroller.setEnabled(true);
@@ -62,13 +63,15 @@ public class DeathGameView {
         //Panel adds objects to view
         startPanel.setLayout(null);
         startPanel.setPreferredSize(new Dimension(900,900));
+        startPanel.add(listParticipant);
         startPanel.add(startSimulation);
         startPanel.add(addParticipant);
         //startPanel.add(Scroller);
 
         //Set bounds for buttons
-        startSimulation.setBounds(50,50,800,100);
-        addParticipant.setBounds(50,200,800,100);
+        listParticipant.setBounds(50,50,800,100);
+        startSimulation.setBounds(50,200,800,100);
+        addParticipant.setBounds(50,350,800,100);
         //Scroller.setBounds(850,0,50,200);
 
         //Logic for buttons pressed
@@ -76,7 +79,7 @@ public class DeathGameView {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buttons.add(new JButton("Participant " + (participantNo + 1)));
-                buttons.get(participantNo).setBounds(50, 350 + participantNo*150, 800, 100);
+                buttons.get(participantNo).setBounds(50, 500 + participantNo*150, 800, 100);
                 startPanel.add(buttons.get(participantNo));
                 ps.add(new Participant(0, 0, 0, 0, new Hashtable<Participant, Integer>(), "Participant " + (participantNo + 1)));
                 buttons.get(participantNo).addActionListener(new ActionListener() {
@@ -268,6 +271,9 @@ public class DeathGameView {
                 frame2.dispose();
             }
         });
+    }
+    public void listParticipants() {
+
     }
 
 }
