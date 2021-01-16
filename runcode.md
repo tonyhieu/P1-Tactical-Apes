@@ -55,4 +55,5 @@ Click on "Create New Participant" to add a new button that will allow you to cre
   <img src="https://github.com/tonyhieu/P1-Tactical-Apes/blob/main/media/survGameEditor.PNG">
 </p>
 
-You can drag the sliders around to edit the attributes of your participant. Every aspect of your participant will save even after you leave the window, including their name! You can keep adding as many participants as you want. The Start Simulation button is not functional at the moment.
+You can drag the sliders around to edit the attributes of your participant. Every aspect of your participant will save even after you leave the window, including their name! You can keep adding as many participants as you want. The Start Simulation and List Participants buttons are not functional at the moment.
+s
