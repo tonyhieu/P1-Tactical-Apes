@@ -40,6 +40,7 @@ public class DeathGameView {
         ps.add(new Participant(0, 0, 0, 0, new Hashtable<Participant, Integer>(), "Participant 2"));
         JButton participant3 = new JButton("Participant 3");
         ps.add(new Participant(0, 0, 0, 0, new Hashtable<Participant, Integer>(), "Participant 3"));
+        JButton newParticipant = new JButton("Add New Participant");
         JButton startSimulation = new JButton("Start Simulation");
         System.out.println(ps.size());
 
