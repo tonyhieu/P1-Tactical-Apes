@@ -37,7 +37,11 @@ public class SinglePendulumView {
     public void initUI() {
         frame = new JFrame();
         panel = new JPanel();
-        startSimulation = new JButton("Start Simulation");
+        JButton startSimulation = new JButton("Start Simulation");
+
+        JButton editProperties = new JButton("Edit Pendulum Properties)");
+
+
 
 
         frame.setSize(new Dimension(800,800));
@@ -48,8 +52,11 @@ public class SinglePendulumView {
         panel.setLayout(null);
         panel.setPreferredSize(new Dimension(800, 800));
         panel.add(startSimulation);
+        panel.add(editProperties);
 
         startSimulation.setBounds(100,200,500,100);
+
+        editProperties.setBounds(100,400,500,100);
 
         startSimulation.addActionListener(new ActionListener() {
             @Override
@@ -57,6 +64,11 @@ public class SinglePendulumView {
                 startSimulation();
             }
         });
+
+        /*editProperties.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {editPendulumProperties();}
+        });*/
 
     }
 
