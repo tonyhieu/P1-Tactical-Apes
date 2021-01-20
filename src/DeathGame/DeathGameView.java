@@ -14,13 +14,14 @@ import java.util.*;
 import DeathGame.Participant;
 
 
-public class DeathGameView {
+public class DeathGameView extends JFrame {
     //logic variables
     public final int BHEIGHT = 100;
     public final int BWIDTH = 800;
     public static ArrayList<Participant> ps = new ArrayList<Participant>();
     public static int participantNo = 0;
     public static ArrayList<JButton> buttons = new ArrayList<JButton>();
+    public ArrayList<JLabel> labels = new ArrayList<JLabel>();
 
     //JPanel variables
     /*public JButton participant1;
@@ -42,10 +43,9 @@ public class DeathGameView {
         JButton startSimulation = new JButton("Start Simulation");
         JButton addParticipant = new JButton("Create New Participant (please be patient while the button loads!)");
         JButton listParticipant = new JButton("List Participants");
+        JButton test = new JButton("Test");
 
-        //JScrollPane Scroller = new JScrollPane(startPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        //Scroller.setEnabled(true);
-        //Scroller.setSize(500,500);
+        //JScrollPane Scroller = new JScrollPane(startPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         //Scroller.setPreferredSize(new Dimension(100,100));
         //Scroller.setVisible(true);
 
@@ -53,25 +53,31 @@ public class DeathGameView {
 
 
         //Dimensions and properties of frame
-        frame.setSize(900, 900);
+        frame.setSize(900, 800);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setVisible(true);
-        //frame.add(Scroller);
+      //  frame.add(Scroller);
         frame.add(startPanel);
+        //frame.getContentPane().add(Scroller);
+       // frame.pack();
+        frame.setVisible(true);
+
+        //frame.add(Scroller);
         //frame.add(BorderLayout.CENTER, new JScrollPane(startPanel));
 
         //Panel adds objects to view
         startPanel.setLayout(null);
-        startPanel.setPreferredSize(new Dimension(900,900));
+       // startPanel.setPreferredSize(new Dimension(900,800));
         startPanel.add(listParticipant);
         startPanel.add(startSimulation);
         startPanel.add(addParticipant);
-        //startPanel.add(Scroller);
+       // startPanel.add(Scroller);
+        //startPanel.add(test);
 
         //Set bounds for buttons
         listParticipant.setBounds(50,50,800,100);
         startSimulation.setBounds(50,200,800,100);
         addParticipant.setBounds(50,350,800,100);
+        test.setBounds(50,750,800,100);
         //Scroller.setBounds(850,0,50,200);
 
         //Logic for buttons pressed
@@ -92,6 +98,13 @@ public class DeathGameView {
                 });
                 System.out.print(participantNo);
                 participantNo++;
+            }
+        });
+        listParticipant.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DeathGameView list = new DeathGameView();
+                list.listParticipants();
             }
         });
         /*participant1.addActionListener(new ActionListener() {
@@ -273,6 +286,26 @@ public class DeathGameView {
         });
     }
     public void listParticipants() {
+        JFrame listFrame = new JFrame();
+        JPanel listPanel = new JPanel();
+       // JLabel test = new JLabel(String.valueOf(ps.get(0).name));
+
+        listFrame.setSize(800, 800);
+        listFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        listFrame.setVisible(true);
+        listFrame.add(listPanel);
+
+       // test.setBounds(50,50,50,50);
+
+       // listPanel.add(test);
+        listPanel.setLayout(null);
+
+        for (int i = 0; i < ps.size(); i++) {
+            labels.add(new JLabel("Participant " + (i + 1) + ": " + "Name: " + ps.get(i).name + ", Intelligence: " + ps.get(i).intel + ", Strength: " + ps.get(i).str + ", Sociability: " + ps.get(i).soc + ", Empathy: " + ps.get(i).emp ));
+            labels.get(i).setBounds(50, 50 + i*50, 800, 100);
+            listPanel.add(labels.get(i));
+
+        }
 
     }
 
