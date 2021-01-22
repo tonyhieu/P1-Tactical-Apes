@@ -54,7 +54,7 @@ public class PendulumDisplay extends JPanel implements Runnable {
 
         while (true) {
 
-            aAcc = -9.81 / rodLength * Math.sin(a);
+            aAcc = -.75 / rodLength * Math.sin(a);
             aVel += aAcc;
             a += aVel;
             //System.out.println(a);

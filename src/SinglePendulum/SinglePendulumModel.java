@@ -27,7 +27,7 @@ public class SinglePendulumModel {
 
     public SinglePendulumModel(SinglePendulumView view) {
 
-        new SinglePendulumModel(view,30,5.0,100,0,0,0,9.8);
+        new SinglePendulumModel(view,30,5.0,100,0,0,0,.01);
     }
 
     public SinglePendulumModel(SinglePendulumView view,double a, double bobMass,double rodLength,double rodMass,double pivotFriction, double airResistance, double g) {
