@@ -27,7 +27,7 @@ public class PendulumDisplay extends JPanel implements Runnable {
         this.model = model;
         setDoubleBuffered(true);
     }
-
+    //code for drawing shapes
     @Override
     public void paint(Graphics g) {
         //draw background
@@ -35,11 +35,11 @@ public class PendulumDisplay extends JPanel implements Runnable {
         g.fillRect(0, 0, getWidth(), getHeight());
 
 
-
+        //updates position variables for the pivot point
         anchorX = getWidth() / 2;
         anchorY = getHeight() / 4;
 
-
+        //updates position variables for the bob
         bobX = anchorX + (int) (Math.sin(a) * rodLength);
         bobY = anchorY + (int) (Math.cos(a) * rodLength);
 
@@ -50,14 +50,18 @@ public class PendulumDisplay extends JPanel implements Runnable {
         g.fillOval(bobX - 7, bobY - 7, 14, 14);
     }
 
+    //main animation loop
     public void run() {
 
         while (true) {
 
+            //update to variables
             aAcc = -.75 / rodLength * Math.sin(a);
             aVel += aAcc;
             a += aVel;
             //System.out.println(a);
+
+            //repaint() also calls repaint
             repaint();
             try { Thread.sleep(15); } catch (InterruptedException ex) {}
         }
@@ -68,13 +72,5 @@ public class PendulumDisplay extends JPanel implements Runnable {
         return new Dimension((int) (2 * rodLength + 50), (int) rodLength / 2 * 3);
     }
 
-    /*public static void main(String[] args) {
-        JFrame f = new JFrame("PendulumDisplay");
-        PendulumDisplay p = new PendulumDisplay(model);
-        f.add(p);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.pack();
-        f.setVisible(true);
-        new Thread(p).start();
-    }*/
+
 }

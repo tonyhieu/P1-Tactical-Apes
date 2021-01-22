@@ -23,6 +23,8 @@ import java.awt.Dimension;
 public class SinglePendulumView {
     SinglePendulumModel model;
 
+
+
     JFrame frame;
     JPanel panel;
     JButton startSimulation;

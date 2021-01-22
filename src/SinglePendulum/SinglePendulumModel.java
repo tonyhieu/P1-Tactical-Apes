@@ -5,6 +5,7 @@ import java.lang.Math;
 
 import java.awt.geom.Point2D;
 
+//saves variables everytime user inputs data into GUI
 public class SinglePendulumModel {
     SinglePendulumView view;
 
@@ -47,8 +48,6 @@ public class SinglePendulumModel {
         this.bobX = rodLength*Math.sin(this.a);
         this.bobY = rodLength*Math.cos(this.a);
 
-        System.out.println(this.rodLength);
-        System.out.println(this.a);
 
     }
 

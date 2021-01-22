@@ -3,6 +3,7 @@ package SinglePendulum;
 import javax.swing.*;
 import java.awt.EventQueue;
 
+//coordinates MVC
 public class SinglePendulumMain {
     SinglePendulumModel model;
     SinglePendulumView view;
