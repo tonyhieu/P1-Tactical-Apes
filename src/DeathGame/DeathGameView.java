@@ -55,8 +55,14 @@ public class DeathGameView extends JFrame {
         //Dimensions and properties of frame
         frame.setSize(900, 800);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+        Scroller = new JScrollPane(startPanel);
+        Scroller.createHorizontalScrollBar();
+        Scroller.createVerticalScrollBar();
+        frame.add(Scroller, BorderLayout.CENTER);
+
       //  frame.add(Scroller);
-        frame.add(startPanel);
+
         //frame.getContentPane().add(Scroller);
        // frame.pack();
         frame.setVisible(true);
@@ -120,8 +126,6 @@ public class DeathGameView extends JFrame {
                frame.dispose();
             }
         });*/
-
-
     }
 
     public void SecondView(int index) {
