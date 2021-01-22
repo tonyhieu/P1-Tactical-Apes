@@ -39,7 +39,7 @@ public class SinglePendulumView {
         panel = new JPanel();
         JButton startSimulation = new JButton("Start Simulation");
 
-        JButton editProperties = new JButton("Edit Pendulum Properties)");
+        JButton editProperties = new JButton("Edit Pendulum Properties");
 
 
 
@@ -76,7 +76,7 @@ public class SinglePendulumView {
         JFrame f = new JFrame("PendulumDisplay");
         PendulumDisplay p = new PendulumDisplay(model);
         f.add(p);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         f.pack();
         f.setVisible(true);
         new Thread(p).start();
